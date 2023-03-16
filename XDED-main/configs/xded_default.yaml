@@ -1,0 +1,19 @@
+TRAINER:
+  XDED:
+    KD_TEMP: 4.0
+    REPLACE: False
+    WARMUP: 0
+    LAMBDA: 5.0
+
+DATALOADER:
+  TRAIN_X:
+    BATCH_SIZE: 32
+  TEST:
+    BATCH_SIZE: 32
+  NUM_WORKERS: 4
+
+OPTIM:
+  NAME: 'sgd'
+  LR: 0.001
+  MAX_EPOCH: 5
+  LR_SCHEDULER: 'cosine'
