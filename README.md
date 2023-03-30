@@ -32,7 +32,7 @@ conda env create --file XDED-main/environment.yaml
 ```
 4. Active the environment
 ```c
-conda activate xded
+source activate xded
 ```
 5. Run the code just like on your PC.
 
