@@ -8,9 +8,34 @@ The net used in the paper (resnet18_UniStyle_12) is registered in the file 'XDED
 # How to run the code
 1. If you use your own PC, click 'console' in Pycharm.
 
-2. Type 'python FILE-NAME.py  --gpu-id 0 --IPC 16 --dataset-config-file configs/datasets/domain_ipc_pacs.yaml --config-file configs/xded_default.yaml --trainer XDED --remark XDED_UniStyle12 MODEL.BACKBONE.NAME resnet18_UniStyle_12' in cmd to run.
+2. Type 
+```c
+python FILE-NAME.py  --gpu-id 0 --IPC 16 --dataset-config-file configs/datasets/domain_ipc_pacs.yaml --config-file configs/xded_default.yaml --trainer XDED --remark XDED_UniStyle12 MODEL.BACKBONE.NAME resnet18_UniStyle_12
+```
+  in cmd to run.
 
 3. To know more about these arguments, you can check the file 'XDED-main/options.py'.
+
+# How to run the code on HPC
+1. Require a 8G RAM and a GPU
+```c 
+srun --account=dcs-res --partition=dcs-gpu --mem=8G --nodes=1 --gpus-per-node=1 --pty bash //require GPU from dcs with 8G RAM
+```
+2. Load conda module and cuDNN module
+```c
+module load Anaconda3/5.3.0
+module load cuDNN/7.6.4.38-gcccuda-2019b
+```
+3. Create a conda environment ('environment.yaml' is a file in XDED-main)
+```c
+conda env create --file XDED-main/environment.yaml
+```
+4. Active the environment
+```c
+conda activate xded
+```
+5. Run the code just like on your PC.
+
 
 # About run the epoch
 You can find a file 'XDED-main/dassl/engine/trainer.py'. In this file, author defined how to train the model.
