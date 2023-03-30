@@ -10,12 +10,10 @@ The net used in the paper (resnet18_UniStyle_12) is registered in the file 'XDED
 # How to run the code
 1. If you use your own PC, click 'console' in Pycharm.
 
-2. Type 
+2. Type following code in cmd to run the code.
 ```c
 python FILE-NAME.py  --gpu-id 0 --IPC 16 --dataset-config-file configs/datasets/domain_ipc_pacs.yaml --config-file configs/xded_default.yaml --trainer XDED --remark XDED_UniStyle12 MODEL.BACKBONE.NAME resnet18_UniStyle_12
 ```
-  
-  in cmd to run.
 
 3. To know more about these arguments, you can check the file 'XDED-main/options.py'.
 
