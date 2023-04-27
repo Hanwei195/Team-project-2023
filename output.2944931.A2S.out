@@ -1,0 +1,1204 @@
+Setting fixed seed: 1
+Collecting env info ...
+** System info **
+PyTorch version: 1.10.1
+Is debug build: False
+CUDA used to build PyTorch: 11.3
+ROCM used to build PyTorch: N/A
+
+OS: CentOS Linux release 7.9.2009 (Core) (x86_64)
+GCC version: (GCC) 8.3.0
+Clang version: Could not collect
+CMake version: Could not collect
+Libc version: glibc-2.17
+
+Python version: 3.7.13 (default, Mar 29 2022, 02:18:16)  [GCC 7.5.0] (64-bit runtime)
+Python platform: Linux-3.10.0-1160.88.1.el7.x86_64-x86_64-with-centos-7.9.2009-Core
+Is CUDA available: True
+CUDA runtime version: 10.1.243
+GPU models and configuration: GPU 0: Tesla V100-SXM2-32GB
+Nvidia driver version: 525.105.17
+cuDNN version: Could not collect
+HIP runtime version: N/A
+MIOpen runtime version: N/A
+
+Versions of relevant libraries:
+[pip3] numpy==1.21.5
+[pip3] torch==1.10.1
+[pip3] torchaudio==0.10.1
+[pip3] torchvision==0.11.2
+[conda] blas                      1.0                         mkl    conda-forge
+[conda] cudatoolkit               11.3.1               h2bc3f7f_2  
+[conda] mkl                       2021.4.0           h8d4b97c_729    conda-forge
+[conda] mkl-service               2.4.0            py37h402132d_0    conda-forge
+[conda] mkl_fft                   1.3.1            py37h3e078e5_1    conda-forge
+[conda] mkl_random                1.2.2            py37h219a48f_0    conda-forge
+[conda] numpy                     1.21.5           py37he7a7128_2  
+[conda] numpy-base                1.21.5           py37hf524024_2  
+[conda] pytorch                   1.10.1          py3.7_cuda11.3_cudnn8.2.0_0    pytorch
+[conda] pytorch-mutex             1.0                        cuda    pytorch
+[conda] torchaudio                0.10.1               py37_cu113    pytorch
+[conda] torchvision               0.11.2               py37_cu113    pytorch
+        Pillow (8.2.0)
+
+['XDED', 'Vanilla']
+Loading trainer: XDED
+Loading dataset: PACS
+Building transform_train
++ resize to 224x224
++ random flip
++ random translation
++ to torch tensor of range [0, 1]
++ normalization (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+Building transform_test
++ resize to 224x224
++ to torch tensor of range [0, 1]
++ normalization (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+***** Dataset statistics *****
+  Dataset: PACS
+  Source domains: ['art_painting']
+  Target domains: ['sketch']
+  # classes: 7
+  # train_x: 1,840
+  # val: 208
+  # test: 3,928
+Building model
+Backbone: resnet18_UniStyle_12
+ResNet BACKBONE INITIALIZED
+# params: 11,180,103
+Loading evaluator: Classification
+Initializing summary writer for tensorboard with log_dir=logs/sketch/XDED_XDED_UniStyle12
+/home/acr22hl/.conda/envs/xded/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+epoch [1/100][10/57]	time 0.341 (0.566)	data 0.293 (0.316)	eta 0:53:39	loss 2.8775 (2.4471)	xded_loss 0.0726 (0.0627)	acc 0.0000 (17.8125)	lr 0.001
+epoch [1/100][20/57]	time 0.155 (0.387)	data 0.109 (0.238)	eta 0:36:39	loss 2.2849 (2.4765)	xded_loss 0.0431 (0.0573)	acc 0.0000 (19.5312)	lr 0.001
+epoch [1/100][30/57]	time 0.485 (0.340)	data 0.429 (0.219)	eta 0:32:05	loss 1.9960 (2.5431)	xded_loss 0.0429 (0.0544)	acc 37.5000 (17.9167)	lr 0.001
+epoch [1/100][40/57]	time 0.155 (0.310)	data 0.103 (0.205)	eta 0:29:12	loss 2.1109 (2.4342)	xded_loss 0.0400 (0.0521)	acc 6.2500 (19.6875)	lr 0.001
+epoch [1/100][50/57]	time 0.679 (0.299)	data 0.630 (0.203)	eta 0:28:10	loss 1.3622 (2.4068)	xded_loss 0.0475 (0.0503)	acc 75.0000 (20.3750)	lr 0.001
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 779
+* accuracy: 19.95%
+* error: 80.05%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-1"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [2/100][10/57]	time 0.269 (0.324)	data 0.221 (0.260)	eta 0:30:24	loss 1.7203 (2.5798)	xded_loss 0.0484 (0.0440)	acc 37.5000 (13.7500)	lr 0.0009997532801828658
+epoch [2/100][20/57]	time 0.111 (0.261)	data 0.050 (0.197)	eta 0:24:27	loss 0.8617 (2.7085)	xded_loss 0.0427 (0.0431)	acc 100.0000 (15.7812)	lr 0.0009997532801828658
+epoch [2/100][30/57]	time 0.067 (0.255)	data 0.000 (0.189)	eta 0:23:49	loss 2.9580 (2.8506)	xded_loss 0.0498 (0.0429)	acc 0.0000 (15.5208)	lr 0.0009997532801828658
+epoch [2/100][40/57]	time 0.067 (0.242)	data 0.005 (0.177)	eta 0:22:34	loss 3.0062 (2.7253)	xded_loss 0.0374 (0.0413)	acc 0.0000 (17.3438)	lr 0.0009997532801828658
+epoch [2/100][50/57]	time 0.070 (0.242)	data 0.000 (0.176)	eta 0:22:34	loss 2.3546 (2.6250)	xded_loss 0.0362 (0.0402)	acc 0.0000 (17.7500)	lr 0.0009997532801828658
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 954
+* accuracy: 24.44%
+* error: 75.56%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-2"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [3/100][10/57]	time 0.128 (0.354)	data 0.058 (0.285)	eta 0:32:56	loss 2.5204 (1.8996)	xded_loss 0.0423 (0.0388)	acc 0.0000 (41.8750)	lr 0.0009990133642141358
+epoch [3/100][20/57]	time 0.060 (0.278)	data 0.013 (0.210)	eta 0:25:47	loss 1.5501 (2.1512)	xded_loss 0.0427 (0.0385)	acc 40.6250 (30.9375)	lr 0.0009990133642141358
+epoch [3/100][30/57]	time 0.140 (0.275)	data 0.097 (0.209)	eta 0:25:29	loss 1.8671 (2.1844)	xded_loss 0.0316 (0.0403)	acc 50.0000 (32.1875)	lr 0.0009990133642141358
+epoch [3/100][40/57]	time 0.079 (0.257)	data 0.002 (0.190)	eta 0:23:43	loss 3.1952 (2.2060)	xded_loss 0.0360 (0.0410)	acc 0.0000 (32.5000)	lr 0.0009990133642141358
+epoch [3/100][50/57]	time 0.161 (0.256)	data 0.085 (0.191)	eta 0:23:38	loss 1.7695 (2.1906)	xded_loss 0.0464 (0.0411)	acc 46.8750 (29.5625)	lr 0.0009990133642141358
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,275
+* accuracy: 32.66%
+* error: 67.34%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-3"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [4/100][10/57]	time 0.129 (0.317)	data 0.080 (0.255)	eta 0:29:11	loss 2.4859 (2.1041)	xded_loss 0.0424 (0.0452)	acc 28.1250 (32.1875)	lr 0.00099778098230154
+epoch [4/100][20/57]	time 0.078 (0.266)	data 0.005 (0.201)	eta 0:24:24	loss 2.8848 (1.9433)	xded_loss 0.0504 (0.0431)	acc 0.0000 (36.7188)	lr 0.00099778098230154
+epoch [4/100][30/57]	time 0.136 (0.255)	data 0.090 (0.191)	eta 0:23:20	loss 1.4341 (2.0676)	xded_loss 0.0331 (0.0409)	acc 62.5000 (32.2917)	lr 0.00099778098230154
+epoch [4/100][40/57]	time 0.082 (0.246)	data 0.000 (0.184)	eta 0:22:30	loss 2.1380 (2.1300)	xded_loss 0.0330 (0.0404)	acc 0.0000 (29.5312)	lr 0.00099778098230154
+epoch [4/100][50/57]	time 0.154 (0.244)	data 0.097 (0.183)	eta 0:22:14	loss 2.9186 (2.1702)	xded_loss 0.0400 (0.0405)	acc 0.0000 (26.8125)	lr 0.00099778098230154
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,087
+* accuracy: 27.84%
+* error: 72.16%
+epoch [5/100][10/57]	time 0.156 (0.361)	data 0.097 (0.294)	eta 0:32:52	loss 2.3938 (2.3251)	xded_loss 0.0489 (0.0406)	acc 0.0000 (26.8750)	lr 0.000996057350657239
+epoch [5/100][20/57]	time 0.090 (0.276)	data 0.001 (0.209)	eta 0:25:03	loss 3.3627 (2.3508)	xded_loss 0.0529 (0.0446)	acc 0.0000 (26.2500)	lr 0.000996057350657239
+epoch [5/100][30/57]	time 0.159 (0.265)	data 0.093 (0.200)	eta 0:24:02	loss 3.3711 (2.3464)	xded_loss 0.0459 (0.0448)	acc 0.0000 (25.1042)	lr 0.000996057350657239
+epoch [5/100][40/57]	time 0.074 (0.247)	data 0.002 (0.181)	eta 0:22:22	loss 4.0071 (2.3149)	xded_loss 0.0361 (0.0444)	acc 0.0000 (28.5938)	lr 0.000996057350657239
+epoch [5/100][50/57]	time 0.074 (0.248)	data 0.000 (0.184)	eta 0:22:25	loss 2.1986 (2.2372)	xded_loss 0.0371 (0.0438)	acc 18.7500 (28.3750)	lr 0.000996057350657239
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 891
+* accuracy: 22.82%
+* error: 77.18%
+epoch [6/100][10/57]	time 0.065 (0.349)	data 0.015 (0.276)	eta 0:31:25	loss 2.0097 (2.0459)	xded_loss 0.0515 (0.0418)	acc 18.7500 (28.1250)	lr 0.0009938441702975688
+epoch [6/100][20/57]	time 0.103 (0.271)	data 0.000 (0.199)	eta 0:24:22	loss 1.8208 (1.9387)	xded_loss 0.0425 (0.0429)	acc 43.7500 (35.6250)	lr 0.0009938441702975688
+epoch [6/100][30/57]	time 0.288 (0.264)	data 0.236 (0.195)	eta 0:23:40	loss 1.4023 (1.9448)	xded_loss 0.0363 (0.0433)	acc 50.0000 (35.1042)	lr 0.0009938441702975688
+epoch [6/100][40/57]	time 0.076 (0.248)	data 0.001 (0.179)	eta 0:22:10	loss 1.2026 (2.0155)	xded_loss 0.0520 (0.0438)	acc 84.3750 (37.2656)	lr 0.0009938441702975688
+epoch [6/100][50/57]	time 0.105 (0.253)	data 0.000 (0.184)	eta 0:22:38	loss 2.4792 (2.2023)	xded_loss 0.0408 (0.0447)	acc 0.0000 (32.9375)	lr 0.0009938441702975688
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 761
+* accuracy: 19.49%
+* error: 80.51%
+epoch [7/100][10/57]	time 0.390 (0.340)	data 0.329 (0.276)	eta 0:30:16	loss 2.4748 (1.9674)	xded_loss 0.0512 (0.0406)	acc 21.8750 (32.1875)	lr 0.0009911436253643444
+epoch [7/100][20/57]	time 0.087 (0.268)	data 0.000 (0.201)	eta 0:23:49	loss 2.2362 (1.9270)	xded_loss 0.0451 (0.0417)	acc 18.7500 (33.2812)	lr 0.0009911436253643444
+epoch [7/100][30/57]	time 0.276 (0.259)	data 0.229 (0.197)	eta 0:22:57	loss 1.6887 (1.9270)	xded_loss 0.0416 (0.0425)	acc 50.0000 (32.9167)	lr 0.0009911436253643444
+epoch [7/100][40/57]	time 0.075 (0.243)	data 0.000 (0.183)	eta 0:21:34	loss 3.0880 (1.9165)	xded_loss 0.0466 (0.0440)	acc 3.1250 (34.1406)	lr 0.0009911436253643444
+epoch [7/100][50/57]	time 0.422 (0.250)	data 0.379 (0.190)	eta 0:22:06	loss 2.2516 (1.9789)	xded_loss 0.0355 (0.0449)	acc 3.1250 (32.6875)	lr 0.0009911436253643444
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,194
+* accuracy: 30.58%
+* error: 69.42%
+epoch [8/100][10/57]	time 0.078 (0.348)	data 0.000 (0.278)	eta 0:30:40	loss 0.9845 (2.2575)	xded_loss 0.0380 (0.0463)	acc 90.6250 (30.3125)	lr 0.0009879583809693736
+epoch [8/100][20/57]	time 0.070 (0.266)	data 0.001 (0.195)	eta 0:23:22	loss 2.5985 (2.1069)	xded_loss 0.0374 (0.0468)	acc 0.0000 (30.4688)	lr 0.0009879583809693736
+epoch [8/100][30/57]	time 0.119 (0.256)	data 0.001 (0.187)	eta 0:22:31	loss 0.8440 (2.0380)	xded_loss 0.0453 (0.0446)	acc 100.0000 (33.5417)	lr 0.0009879583809693736
+epoch [8/100][40/57]	time 0.127 (0.243)	data 0.073 (0.176)	eta 0:21:17	loss 1.9038 (2.0174)	xded_loss 0.0372 (0.0424)	acc 50.0000 (34.3750)	lr 0.0009879583809693736
+epoch [8/100][50/57]	time 0.098 (0.245)	data 0.005 (0.176)	eta 0:21:27	loss 1.5552 (1.9915)	xded_loss 0.0445 (0.0409)	acc 65.6250 (35.3750)	lr 0.0009879583809693736
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,197
+* accuracy: 30.66%
+* error: 69.34%
+epoch [9/100][10/57]	time 0.293 (0.330)	data 0.246 (0.271)	eta 0:28:47	loss 1.9800 (2.1341)	xded_loss 0.0387 (0.0484)	acc 46.8750 (33.7500)	lr 0.0009842915805643154
+epoch [9/100][20/57]	time 0.113 (0.263)	data 0.065 (0.205)	eta 0:22:53	loss 1.9212 (1.8931)	xded_loss 0.0345 (0.0434)	acc 18.7500 (40.4688)	lr 0.0009842915805643154
+epoch [9/100][30/57]	time 0.076 (0.256)	data 0.002 (0.195)	eta 0:22:15	loss 1.9600 (1.8756)	xded_loss 0.0325 (0.0408)	acc 28.1250 (41.2500)	lr 0.0009842915805643154
+epoch [9/100][40/57]	time 0.108 (0.243)	data 0.064 (0.181)	eta 0:21:03	loss 3.3869 (2.0005)	xded_loss 0.0459 (0.0402)	acc 0.0000 (34.7656)	lr 0.0009842915805643154
+epoch [9/100][50/57]	time 0.145 (0.242)	data 0.098 (0.184)	eta 0:20:59	loss 1.3031 (1.9876)	xded_loss 0.0348 (0.0398)	acc 53.1250 (34.1875)	lr 0.0009842915805643154
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,053
+* accuracy: 26.97%
+* error: 73.03%
+epoch [10/100][10/57]	time 0.293 (0.347)	data 0.230 (0.281)	eta 0:29:56	loss 2.0696 (2.2280)	xded_loss 0.0667 (0.0426)	acc 34.3750 (33.1250)	lr 0.0009801468428384714
+epoch [10/100][20/57]	time 0.081 (0.267)	data 0.000 (0.203)	eta 0:22:58	loss 0.9391 (2.1133)	xded_loss 0.0290 (0.0402)	acc 78.1250 (35.4688)	lr 0.0009801468428384714
+epoch [10/100][30/57]	time 0.413 (0.260)	data 0.358 (0.200)	eta 0:22:22	loss 1.9667 (2.0285)	xded_loss 0.0327 (0.0392)	acc 0.0000 (36.4583)	lr 0.0009801468428384714
+epoch [10/100][40/57]	time 0.072 (0.243)	data 0.000 (0.183)	eta 0:20:49	loss 1.4641 (2.0039)	xded_loss 0.0371 (0.0387)	acc 56.2500 (36.6406)	lr 0.0009801468428384714
+epoch [10/100][50/57]	time 0.462 (0.246)	data 0.413 (0.187)	eta 0:21:03	loss 1.6303 (1.9762)	xded_loss 0.0419 (0.0393)	acc 31.2500 (35.3750)	lr 0.0009801468428384714
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 811
+* accuracy: 20.77%
+* error: 79.23%
+epoch [11/100][10/57]	time 0.321 (0.350)	data 0.266 (0.276)	eta 0:29:49	loss 2.4227 (1.9248)	xded_loss 0.0466 (0.0431)	acc 34.3750 (40.6250)	lr 0.0009755282581475767
+epoch [11/100][20/57]	time 0.068 (0.272)	data 0.004 (0.198)	eta 0:23:09	loss 1.7727 (1.9278)	xded_loss 0.0311 (0.0436)	acc 34.3750 (40.0000)	lr 0.0009755282581475767
+epoch [11/100][30/57]	time 0.070 (0.263)	data 0.002 (0.192)	eta 0:22:22	loss 1.2008 (1.8147)	xded_loss 0.0484 (0.0434)	acc 90.6250 (46.5625)	lr 0.0009755282581475767
+epoch [11/100][40/57]	time 0.082 (0.246)	data 0.000 (0.176)	eta 0:20:54	loss 1.3576 (1.7629)	xded_loss 0.0422 (0.0432)	acc 59.3750 (49.5312)	lr 0.0009755282581475767
+epoch [11/100][50/57]	time 0.061 (0.251)	data 0.000 (0.182)	eta 0:21:16	loss 1.0403 (1.7151)	xded_loss 0.0589 (0.0445)	acc 93.7500 (50.3125)	lr 0.0009755282581475767
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,079
+* accuracy: 27.64%
+* error: 72.36%
+epoch [12/100][10/57]	time 0.254 (0.339)	data 0.211 (0.275)	eta 0:28:34	loss 0.8747 (1.7582)	xded_loss 0.0457 (0.0458)	acc 93.7500 (37.5000)	lr 0.0009704403844771127
+epoch [12/100][20/57]	time 0.078 (0.270)	data 0.000 (0.198)	eta 0:22:42	loss 2.0398 (1.9830)	xded_loss 0.0442 (0.0517)	acc 31.2500 (33.5938)	lr 0.0009704403844771127
+epoch [12/100][30/57]	time 0.421 (0.264)	data 0.364 (0.197)	eta 0:22:10	loss 1.3969 (1.8494)	xded_loss 0.0706 (0.0509)	acc 81.2500 (40.6250)	lr 0.0009704403844771127
+epoch [12/100][40/57]	time 0.079 (0.248)	data 0.003 (0.182)	eta 0:20:49	loss 1.8572 (1.7463)	xded_loss 0.0696 (0.0508)	acc 40.6250 (46.5625)	lr 0.0009704403844771127
+epoch [12/100][50/57]	time 0.319 (0.252)	data 0.255 (0.186)	eta 0:21:04	loss 1.2557 (1.6752)	xded_loss 0.0499 (0.0505)	acc 56.2500 (49.2500)	lr 0.0009704403844771127
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,673
+* accuracy: 42.85%
+* error: 57.15%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-12"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [13/100][10/57]	time 0.157 (0.318)	data 0.097 (0.247)	eta 0:26:31	loss 2.1016 (1.9773)	xded_loss 0.0418 (0.0494)	acc 3.1250 (24.6875)	lr 0.0009648882429441257
+epoch [13/100][20/57]	time 0.145 (0.263)	data 0.083 (0.193)	eta 0:21:52	loss 0.9698 (1.8077)	xded_loss 0.0518 (0.0494)	acc 81.2500 (36.4062)	lr 0.0009648882429441257
+epoch [13/100][30/57]	time 0.081 (0.262)	data 0.000 (0.190)	eta 0:21:44	loss 0.8179 (1.7790)	xded_loss 0.0617 (0.0520)	acc 100.0000 (41.2500)	lr 0.0009648882429441257
+epoch [13/100][40/57]	time 0.079 (0.246)	data 0.000 (0.173)	eta 0:20:22	loss 1.2418 (1.6922)	xded_loss 0.0344 (0.0531)	acc 43.7500 (46.9531)	lr 0.0009648882429441257
+epoch [13/100][50/57]	time 0.098 (0.249)	data 0.000 (0.176)	eta 0:20:35	loss 1.2676 (1.7062)	xded_loss 0.0497 (0.0516)	acc 75.0000 (47.4375)	lr 0.0009648882429441257
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 831
+* accuracy: 21.29%
+* error: 78.71%
+epoch [14/100][10/57]	time 0.156 (0.332)	data 0.112 (0.277)	eta 0:27:22	loss 1.0167 (1.4495)	xded_loss 0.0564 (0.0524)	acc 90.6250 (60.6250)	lr 0.0009588773128419905
+epoch [14/100][20/57]	time 0.137 (0.264)	data 0.095 (0.208)	eta 0:21:41	loss 1.8937 (1.5627)	xded_loss 0.0384 (0.0519)	acc 6.2500 (53.5938)	lr 0.0009588773128419905
+epoch [14/100][30/57]	time 0.123 (0.256)	data 0.043 (0.197)	eta 0:21:03	loss 1.2349 (1.6155)	xded_loss 0.0604 (0.0530)	acc 53.1250 (49.8958)	lr 0.0009588773128419905
+epoch [14/100][40/57]	time 0.091 (0.246)	data 0.003 (0.185)	eta 0:20:08	loss 5.2694 (1.8388)	xded_loss 0.0508 (0.0531)	acc 0.0000 (48.2031)	lr 0.0009588773128419905
+epoch [14/100][50/57]	time 0.139 (0.246)	data 0.005 (0.182)	eta 0:20:05	loss 2.1122 (1.8832)	xded_loss 0.0415 (0.0524)	acc 50.0000 (46.8750)	lr 0.0009588773128419905
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,674
+* accuracy: 42.88%
+* error: 57.12%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-14"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [15/100][10/57]	time 0.068 (0.351)	data 0.001 (0.284)	eta 0:28:36	loss 2.2000 (1.5886)	xded_loss 0.0662 (0.0498)	acc 3.1250 (43.4375)	lr 0.0009524135262330098
+epoch [15/100][20/57]	time 0.080 (0.271)	data 0.001 (0.205)	eta 0:22:02	loss 1.7652 (1.6411)	xded_loss 0.0622 (0.0494)	acc 46.8750 (50.0000)	lr 0.0009524135262330098
+epoch [15/100][30/57]	time 0.136 (0.271)	data 0.051 (0.203)	eta 0:22:02	loss 1.2144 (1.6689)	xded_loss 0.0472 (0.0509)	acc 53.1250 (47.2917)	lr 0.0009524135262330098
+epoch [15/100][40/57]	time 0.078 (0.255)	data 0.000 (0.185)	eta 0:20:39	loss 1.5668 (1.6192)	xded_loss 0.0483 (0.0524)	acc 50.0000 (49.7656)	lr 0.0009524135262330098
+epoch [15/100][50/57]	time 0.057 (0.260)	data 0.000 (0.192)	eta 0:20:59	loss 0.6945 (1.6256)	xded_loss 0.0368 (0.0531)	acc 100.0000 (50.6875)	lr 0.0009524135262330098
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,177
+* accuracy: 30.15%
+* error: 69.85%
+epoch [16/100][10/57]	time 0.106 (0.345)	data 0.001 (0.272)	eta 0:27:48	loss 1.8795 (1.6700)	xded_loss 0.0685 (0.0565)	acc 46.8750 (55.9375)	lr 0.0009455032620941839
+epoch [16/100][20/57]	time 0.060 (0.267)	data 0.003 (0.198)	eta 0:21:29	loss 1.2623 (1.7085)	xded_loss 0.0507 (0.0551)	acc 62.5000 (54.3750)	lr 0.0009455032620941839
+epoch [16/100][30/57]	time 0.140 (0.258)	data 0.095 (0.192)	eta 0:20:42	loss 1.8055 (1.6220)	xded_loss 0.0451 (0.0550)	acc 37.5000 (55.6250)	lr 0.0009455032620941839
+epoch [16/100][40/57]	time 0.095 (0.244)	data 0.000 (0.177)	eta 0:19:31	loss 2.3217 (1.6046)	xded_loss 0.0521 (0.0541)	acc 3.1250 (54.9219)	lr 0.0009455032620941839
+epoch [16/100][50/57]	time 0.181 (0.244)	data 0.123 (0.180)	eta 0:19:32	loss 1.2265 (1.5835)	xded_loss 0.0578 (0.0535)	acc 84.3750 (55.8750)	lr 0.0009455032620941839
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,759
+* accuracy: 45.06%
+* error: 54.94%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-16"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [17/100][10/57]	time 0.108 (0.349)	data 0.000 (0.272)	eta 0:27:45	loss 1.5810 (1.5429)	xded_loss 0.0550 (0.0590)	acc 53.1250 (63.7500)	lr 0.0009381533400219318
+epoch [17/100][20/57]	time 0.083 (0.269)	data 0.002 (0.195)	eta 0:21:21	loss 2.3469 (1.4634)	xded_loss 0.0595 (0.0547)	acc 50.0000 (63.9062)	lr 0.0009381533400219318
+epoch [17/100][30/57]	time 0.105 (0.259)	data 0.005 (0.183)	eta 0:20:30	loss 2.4559 (1.7396)	xded_loss 0.0661 (0.0552)	acc 0.0000 (50.3125)	lr 0.0009381533400219318
+epoch [17/100][40/57]	time 0.131 (0.244)	data 0.071 (0.172)	eta 0:19:18	loss 0.6643 (1.7401)	xded_loss 0.0402 (0.0554)	acc 93.7500 (49.3750)	lr 0.0009381533400219318
+epoch [17/100][50/57]	time 0.096 (0.249)	data 0.000 (0.175)	eta 0:19:41	loss 1.5179 (1.7623)	xded_loss 0.0481 (0.0550)	acc 50.0000 (49.3125)	lr 0.0009381533400219318
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,270
+* accuracy: 32.53%
+* error: 67.47%
+epoch [18/100][10/57]	time 0.307 (0.333)	data 0.254 (0.272)	eta 0:26:11	loss 1.4142 (1.3560)	xded_loss 0.0545 (0.0529)	acc 65.6250 (67.8125)	lr 0.0009303710135019719
+epoch [18/100][20/57]	time 0.155 (0.262)	data 0.104 (0.204)	eta 0:20:34	loss 2.9719 (1.4990)	xded_loss 0.0784 (0.0545)	acc 3.1250 (58.5938)	lr 0.0009303710135019719
+epoch [18/100][30/57]	time 0.162 (0.256)	data 0.098 (0.199)	eta 0:20:02	loss 1.8036 (1.5018)	xded_loss 0.0433 (0.0575)	acc 46.8750 (60.8333)	lr 0.0009303710135019719
+epoch [18/100][40/57]	time 0.088 (0.243)	data 0.030 (0.186)	eta 0:19:00	loss 2.5227 (1.6825)	xded_loss 0.0705 (0.0588)	acc 3.1250 (53.3594)	lr 0.0009303710135019719
+epoch [18/100][50/57]	time 0.150 (0.248)	data 0.099 (0.191)	eta 0:19:19	loss 1.9596 (1.6987)	xded_loss 0.0504 (0.0592)	acc 43.7500 (51.1250)	lr 0.0009303710135019719
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,689
+* accuracy: 43.26%
+* error: 56.74%
+epoch [19/100][10/57]	time 0.283 (0.349)	data 0.244 (0.287)	eta 0:27:05	loss 2.8605 (1.2963)	xded_loss 0.0691 (0.0574)	acc 0.0000 (75.0000)	lr 0.0009221639627510076
+epoch [19/100][20/57]	time 0.078 (0.269)	data 0.001 (0.206)	eta 0:20:51	loss 0.6378 (1.4258)	xded_loss 0.0287 (0.0555)	acc 100.0000 (65.9375)	lr 0.0009221639627510076
+epoch [19/100][30/57]	time 0.251 (0.261)	data 0.182 (0.198)	eta 0:20:12	loss 2.1941 (1.3207)	xded_loss 0.0524 (0.0539)	acc 50.0000 (71.1458)	lr 0.0009221639627510076
+epoch [19/100][40/57]	time 0.075 (0.245)	data 0.001 (0.182)	eta 0:18:54	loss 1.0549 (1.3972)	xded_loss 0.0480 (0.0540)	acc 87.5000 (67.0312)	lr 0.0009221639627510076
+epoch [19/100][50/57]	time 0.169 (0.246)	data 0.112 (0.184)	eta 0:18:58	loss 1.0871 (1.4129)	xded_loss 0.0396 (0.0533)	acc 62.5000 (64.7500)	lr 0.0009221639627510076
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 896
+* accuracy: 22.95%
+* error: 77.05%
+epoch [20/100][10/57]	time 0.069 (0.356)	data 0.000 (0.284)	eta 0:27:19	loss 2.1669 (1.4100)	xded_loss 0.0596 (0.0623)	acc 50.0000 (61.2500)	lr 0.000913540287137281
+epoch [20/100][20/57]	time 0.075 (0.272)	data 0.004 (0.203)	eta 0:20:49	loss 0.7538 (1.6835)	xded_loss 0.0538 (0.0580)	acc 96.8750 (58.5938)	lr 0.000913540287137281
+epoch [20/100][30/57]	time 0.057 (0.266)	data 0.009 (0.200)	eta 0:20:19	loss 0.9866 (1.5035)	xded_loss 0.0442 (0.0570)	acc 78.1250 (63.2292)	lr 0.000913540287137281
+epoch [20/100][40/57]	time 0.075 (0.246)	data 0.021 (0.180)	eta 0:18:46	loss 1.3131 (1.6361)	xded_loss 0.0440 (0.0592)	acc 50.0000 (56.1719)	lr 0.000913540287137281
+epoch [20/100][50/57]	time 0.141 (0.249)	data 0.105 (0.185)	eta 0:18:57	loss 0.9152 (1.5112)	xded_loss 0.0367 (0.0568)	acc 68.7500 (61.0000)	lr 0.000913540287137281
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,366
+* accuracy: 34.99%
+* error: 65.01%
+epoch [21/100][10/57]	time 0.162 (0.339)	data 0.099 (0.264)	eta 0:25:43	loss 0.9082 (1.2146)	xded_loss 0.0520 (0.0527)	acc 84.3750 (66.2500)	lr 0.0009045084971874739
+epoch [21/100][20/57]	time 0.072 (0.265)	data 0.000 (0.192)	eta 0:20:04	loss 3.4764 (1.3536)	xded_loss 0.0421 (0.0534)	acc 0.0000 (60.4688)	lr 0.0009045084971874739
+epoch [21/100][30/57]	time 0.093 (0.267)	data 0.011 (0.195)	eta 0:20:09	loss 1.7984 (1.3718)	xded_loss 0.0773 (0.0544)	acc 37.5000 (60.1042)	lr 0.0009045084971874739
+epoch [21/100][40/57]	time 0.077 (0.248)	data 0.001 (0.177)	eta 0:18:42	loss 1.2538 (1.4400)	xded_loss 0.0475 (0.0575)	acc 81.2500 (59.8438)	lr 0.0009045084971874739
+epoch [21/100][50/57]	time 0.086 (0.250)	data 0.000 (0.179)	eta 0:18:48	loss 1.3829 (1.4534)	xded_loss 0.0492 (0.0564)	acc 84.3750 (61.1875)	lr 0.0009045084971874739
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,434
+* accuracy: 36.73%
+* error: 63.27%
+epoch [22/100][10/57]	time 0.143 (0.320)	data 0.088 (0.260)	eta 0:23:57	loss 1.4417 (1.3533)	xded_loss 0.0671 (0.0568)	acc 75.0000 (64.6875)	lr 0.0008950775061878452
+epoch [22/100][20/57]	time 0.150 (0.263)	data 0.099 (0.203)	eta 0:19:37	loss 1.6610 (1.4303)	xded_loss 0.0476 (0.0565)	acc 34.3750 (63.1250)	lr 0.0008950775061878452
+epoch [22/100][30/57]	time 0.293 (0.261)	data 0.245 (0.200)	eta 0:19:27	loss 0.8524 (1.4113)	xded_loss 0.0411 (0.0579)	acc 96.8750 (63.6458)	lr 0.0008950775061878452
+epoch [22/100][40/57]	time 0.088 (0.244)	data 0.000 (0.181)	eta 0:18:09	loss 0.8228 (1.4439)	xded_loss 0.0730 (0.0589)	acc 93.7500 (62.1875)	lr 0.0008950775061878452
+epoch [22/100][50/57]	time 0.139 (0.246)	data 0.099 (0.186)	eta 0:18:17	loss 1.2445 (1.5127)	xded_loss 0.0458 (0.0588)	acc 62.5000 (57.9375)	lr 0.0008950775061878452
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,315
+* accuracy: 33.68%
+* error: 66.32%
+epoch [23/100][10/57]	time 0.149 (0.339)	data 0.103 (0.278)	eta 0:25:05	loss 2.0298 (1.3667)	xded_loss 0.0451 (0.0607)	acc 50.0000 (67.8125)	lr 0.0008852566213878947
+epoch [23/100][20/57]	time 0.076 (0.275)	data 0.000 (0.217)	eta 0:20:17	loss 1.6858 (1.2575)	xded_loss 0.0720 (0.0594)	acc 53.1250 (73.1250)	lr 0.0008852566213878947
+epoch [23/100][30/57]	time 0.296 (0.268)	data 0.252 (0.212)	eta 0:19:45	loss 1.2218 (1.2885)	xded_loss 0.0662 (0.0594)	acc 62.5000 (72.2917)	lr 0.0008852566213878947
+epoch [23/100][40/57]	time 0.070 (0.249)	data 0.005 (0.191)	eta 0:18:16	loss 1.3085 (1.3219)	xded_loss 0.0617 (0.0610)	acc 56.2500 (70.3125)	lr 0.0008852566213878947
+epoch [23/100][50/57]	time 0.294 (0.251)	data 0.243 (0.191)	eta 0:18:23	loss 1.0830 (1.3165)	xded_loss 0.0509 (0.0599)	acc 65.6250 (68.3125)	lr 0.0008852566213878947
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,948
+* accuracy: 49.90%
+* error: 50.10%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-23"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [24/100][10/57]	time 0.115 (0.344)	data 0.000 (0.273)	eta 0:25:04	loss 0.8964 (1.6473)	xded_loss 0.0493 (0.0680)	acc 96.8750 (57.1875)	lr 0.0008750555348152298
+epoch [24/100][20/57]	time 0.079 (0.267)	data 0.001 (0.199)	eta 0:19:25	loss 2.7284 (1.7040)	xded_loss 0.0624 (0.0618)	acc 6.2500 (58.2812)	lr 0.0008750555348152298
+epoch [24/100][30/57]	time 0.272 (0.261)	data 0.226 (0.198)	eta 0:18:55	loss 0.7199 (1.5181)	xded_loss 0.0364 (0.0593)	acc 100.0000 (64.0625)	lr 0.0008750555348152298
+epoch [24/100][40/57]	time 0.077 (0.248)	data 0.000 (0.184)	eta 0:17:58	loss 1.2575 (1.4190)	xded_loss 0.0681 (0.0585)	acc 75.0000 (68.3594)	lr 0.0008750555348152298
+epoch [24/100][50/57]	time 0.310 (0.249)	data 0.254 (0.185)	eta 0:17:59	loss 1.5713 (1.3851)	xded_loss 0.0734 (0.0578)	acc 65.6250 (69.2500)	lr 0.0008750555348152298
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,456
+* accuracy: 37.30%
+* error: 62.70%
+epoch [25/100][10/57]	time 0.245 (0.330)	data 0.197 (0.271)	eta 0:23:45	loss 1.0713 (1.2242)	xded_loss 0.0431 (0.0556)	acc 81.2500 (70.6250)	lr 0.0008644843137107057
+epoch [25/100][20/57]	time 0.063 (0.264)	data 0.003 (0.197)	eta 0:18:56	loss 0.6093 (1.1335)	xded_loss 0.0534 (0.0550)	acc 100.0000 (77.0312)	lr 0.0008644843137107057
+epoch [25/100][30/57]	time 0.149 (0.260)	data 0.101 (0.192)	eta 0:18:39	loss 3.5868 (1.3132)	xded_loss 0.0598 (0.0565)	acc 0.0000 (68.8542)	lr 0.0008644843137107057
+epoch [25/100][40/57]	time 0.081 (0.243)	data 0.026 (0.173)	eta 0:17:24	loss 1.4804 (1.4187)	xded_loss 0.0413 (0.0579)	acc 53.1250 (63.9844)	lr 0.0008644843137107057
+epoch [25/100][50/57]	time 0.118 (0.246)	data 0.015 (0.178)	eta 0:17:34	loss 1.1597 (1.4227)	xded_loss 0.0543 (0.0576)	acc 87.5000 (62.5000)	lr 0.0008644843137107057
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,329
+* accuracy: 34.04%
+* error: 65.96%
+epoch [26/100][10/57]	time 0.141 (0.338)	data 0.074 (0.267)	eta 0:24:00	loss 1.0365 (1.3349)	xded_loss 0.0633 (0.0559)	acc 93.7500 (64.3750)	lr 0.0008535533905932737
+epoch [26/100][20/57]	time 0.083 (0.277)	data 0.003 (0.207)	eta 0:19:37	loss 1.6105 (1.3634)	xded_loss 0.0566 (0.0593)	acc 50.0000 (63.2812)	lr 0.0008535533905932737
+epoch [26/100][30/57]	time 0.087 (0.265)	data 0.002 (0.195)	eta 0:18:43	loss 1.4661 (1.3690)	xded_loss 0.0449 (0.0573)	acc 56.2500 (63.2292)	lr 0.0008535533905932737
+epoch [26/100][40/57]	time 0.069 (0.248)	data 0.000 (0.177)	eta 0:17:29	loss 1.1712 (1.2962)	xded_loss 0.0711 (0.0569)	acc 56.2500 (64.3750)	lr 0.0008535533905932737
+epoch [26/100][50/57]	time 0.138 (0.251)	data 0.000 (0.180)	eta 0:17:38	loss 0.8238 (1.2495)	xded_loss 0.0452 (0.0568)	acc 68.7500 (67.5625)	lr 0.0008535533905932737
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,728
+* accuracy: 44.26%
+* error: 55.74%
+epoch [27/100][10/57]	time 0.143 (0.337)	data 0.095 (0.271)	eta 0:23:36	loss 1.5680 (1.4201)	xded_loss 0.1264 (0.0748)	acc 71.8750 (66.5625)	lr 0.0008422735529643444
+epoch [27/100][20/57]	time 0.166 (0.274)	data 0.120 (0.210)	eta 0:19:11	loss 1.5251 (1.8002)	xded_loss 0.0579 (0.0665)	acc 75.0000 (56.8750)	lr 0.0008422735529643444
+epoch [27/100][30/57]	time 0.169 (0.263)	data 0.096 (0.201)	eta 0:18:21	loss 1.1676 (1.7372)	xded_loss 0.0655 (0.0626)	acc 81.2500 (54.2708)	lr 0.0008422735529643444
+epoch [27/100][40/57]	time 0.159 (0.251)	data 0.097 (0.190)	eta 0:17:27	loss 0.8234 (1.5861)	xded_loss 0.0478 (0.0597)	acc 96.8750 (59.6094)	lr 0.0008422735529643444
+epoch [27/100][50/57]	time 0.117 (0.251)	data 0.001 (0.190)	eta 0:17:25	loss 1.1120 (1.4888)	xded_loss 0.0471 (0.0578)	acc 96.8750 (64.0625)	lr 0.0008422735529643444
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,336
+* accuracy: 59.84%
+* error: 40.16%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-27"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [28/100][10/57]	time 0.298 (0.333)	data 0.221 (0.267)	eta 0:23:01	loss 1.5994 (1.3580)	xded_loss 0.0484 (0.0687)	acc 46.8750 (67.5000)	lr 0.0008306559326618259
+epoch [28/100][20/57]	time 0.084 (0.266)	data 0.006 (0.202)	eta 0:18:22	loss 2.8183 (1.3301)	xded_loss 0.0709 (0.0626)	acc 0.0000 (69.8438)	lr 0.0008306559326618259
+epoch [28/100][30/57]	time 0.148 (0.257)	data 0.000 (0.190)	eta 0:17:42	loss 1.1179 (1.1826)	xded_loss 0.0728 (0.0597)	acc 96.8750 (76.9792)	lr 0.0008306559326618259
+epoch [28/100][40/57]	time 0.076 (0.243)	data 0.000 (0.179)	eta 0:16:42	loss 0.4641 (1.1801)	xded_loss 0.0465 (0.0587)	acc 100.0000 (76.2500)	lr 0.0008306559326618259
+epoch [28/100][50/57]	time 0.141 (0.242)	data 0.104 (0.179)	eta 0:16:33	loss 0.9004 (1.1851)	xded_loss 0.0452 (0.0571)	acc 90.6250 (76.8750)	lr 0.0008306559326618259
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,947
+* accuracy: 49.87%
+* error: 50.13%
+epoch [29/100][10/57]	time 0.077 (0.351)	data 0.004 (0.278)	eta 0:23:58	loss 0.8575 (1.2121)	xded_loss 0.0455 (0.0620)	acc 87.5000 (80.6250)	lr 0.0008187119948743449
+epoch [29/100][20/57]	time 0.082 (0.272)	data 0.002 (0.204)	eta 0:18:31	loss 1.4032 (1.3986)	xded_loss 0.0505 (0.0577)	acc 68.7500 (70.3125)	lr 0.0008187119948743449
+epoch [29/100][30/57]	time 0.112 (0.262)	data 0.001 (0.192)	eta 0:17:49	loss 0.8364 (1.2840)	xded_loss 0.0533 (0.0561)	acc 96.8750 (72.2917)	lr 0.0008187119948743449
+epoch [29/100][40/57]	time 0.059 (0.244)	data 0.000 (0.174)	eta 0:16:30	loss 1.1890 (1.3531)	xded_loss 0.0602 (0.0577)	acc 90.6250 (70.2344)	lr 0.0008187119948743449
+epoch [29/100][50/57]	time 0.084 (0.249)	data 0.000 (0.179)	eta 0:16:50	loss 0.8359 (1.2992)	xded_loss 0.0464 (0.0581)	acc 93.7500 (73.4375)	lr 0.0008187119948743449
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,645
+* accuracy: 42.14%
+* error: 57.86%
+epoch [30/100][10/57]	time 0.074 (0.354)	data 0.000 (0.290)	eta 0:23:47	loss 0.9864 (0.9926)	xded_loss 0.0638 (0.0527)	acc 84.3750 (85.6250)	lr 0.0008064535268264883
+epoch [30/100][20/57]	time 0.084 (0.269)	data 0.001 (0.205)	eta 0:18:02	loss 0.7811 (0.9651)	xded_loss 0.0513 (0.0552)	acc 96.8750 (87.3438)	lr 0.0008064535268264883
+epoch [30/100][30/57]	time 0.074 (0.257)	data 0.006 (0.196)	eta 0:17:10	loss 0.8746 (1.0518)	xded_loss 0.0446 (0.0551)	acc 100.0000 (83.3333)	lr 0.0008064535268264883
+epoch [30/100][40/57]	time 0.139 (0.243)	data 0.070 (0.185)	eta 0:16:14	loss 0.8527 (1.0749)	xded_loss 0.0573 (0.0575)	acc 96.8750 (83.8281)	lr 0.0008064535268264883
+epoch [30/100][50/57]	time 0.078 (0.247)	data 0.006 (0.185)	eta 0:16:26	loss 0.8247 (1.0346)	xded_loss 0.0755 (0.0569)	acc 100.0000 (85.0625)	lr 0.0008064535268264883
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,040
+* accuracy: 52.25%
+* error: 47.75%
+epoch [31/100][10/57]	time 0.429 (0.348)	data 0.372 (0.269)	eta 0:23:06	loss 0.5482 (1.0564)	xded_loss 0.0504 (0.0567)	acc 100.0000 (77.5000)	lr 0.0007938926261462367
+epoch [31/100][20/57]	time 0.055 (0.263)	data 0.005 (0.192)	eta 0:17:25	loss 0.8096 (1.0140)	xded_loss 0.0487 (0.0571)	acc 96.8750 (80.3125)	lr 0.0007938926261462367
+epoch [31/100][30/57]	time 0.141 (0.257)	data 0.091 (0.187)	eta 0:16:57	loss 0.8311 (0.9625)	xded_loss 0.0455 (0.0563)	acc 87.5000 (84.4792)	lr 0.0007938926261462367
+epoch [31/100][40/57]	time 0.077 (0.244)	data 0.006 (0.174)	eta 0:16:05	loss 1.9206 (1.0148)	xded_loss 0.1185 (0.0599)	acc 62.5000 (84.1406)	lr 0.0007938926261462367
+epoch [31/100][50/57]	time 0.166 (0.245)	data 0.119 (0.176)	eta 0:16:05	loss 0.9188 (1.0572)	xded_loss 0.0620 (0.0601)	acc 87.5000 (82.6250)	lr 0.0007938926261462367
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,535
+* accuracy: 39.32%
+* error: 60.68%
+epoch [32/100][10/57]	time 0.134 (0.343)	data 0.074 (0.284)	eta 0:22:27	loss 0.8262 (0.9400)	xded_loss 0.0474 (0.0506)	acc 78.1250 (79.6875)	lr 0.0007810416889260654
+epoch [32/100][20/57]	time 0.082 (0.270)	data 0.001 (0.211)	eta 0:17:36	loss 0.5262 (0.8344)	xded_loss 0.0398 (0.0514)	acc 100.0000 (88.1250)	lr 0.0007810416889260654
+epoch [32/100][30/57]	time 0.091 (0.267)	data 0.002 (0.207)	eta 0:17:21	loss 1.2828 (0.9825)	xded_loss 0.0627 (0.0535)	acc 93.7500 (83.5417)	lr 0.0007810416889260654
+epoch [32/100][40/57]	time 0.065 (0.246)	data 0.001 (0.183)	eta 0:15:59	loss 1.0371 (1.0556)	xded_loss 0.0565 (0.0534)	acc 84.3750 (78.9844)	lr 0.0007810416889260654
+epoch [32/100][50/57]	time 0.081 (0.249)	data 0.001 (0.185)	eta 0:16:08	loss 0.7156 (1.0426)	xded_loss 0.0650 (0.0535)	acc 100.0000 (81.0625)	lr 0.0007810416889260654
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,043
+* accuracy: 52.33%
+* error: 47.67%
+epoch [33/100][10/57]	time 0.063 (0.349)	data 0.002 (0.279)	eta 0:22:29	loss 0.7382 (0.9378)	xded_loss 0.0586 (0.0621)	acc 96.8750 (91.2500)	lr 0.0007679133974894983
+epoch [33/100][20/57]	time 0.096 (0.261)	data 0.037 (0.192)	eta 0:16:46	loss 0.6529 (1.0477)	xded_loss 0.0437 (0.0592)	acc 100.0000 (84.5312)	lr 0.0007679133974894983
+epoch [33/100][30/57]	time 0.082 (0.255)	data 0.003 (0.186)	eta 0:16:19	loss 0.7153 (0.9417)	xded_loss 0.0412 (0.0552)	acc 96.8750 (88.9583)	lr 0.0007679133974894983
+epoch [33/100][40/57]	time 0.063 (0.244)	data 0.000 (0.174)	eta 0:15:34	loss 0.8943 (0.9794)	xded_loss 0.0556 (0.0563)	acc 78.1250 (86.4844)	lr 0.0007679133974894983
+epoch [33/100][50/57]	time 0.149 (0.241)	data 0.099 (0.171)	eta 0:15:22	loss 0.6784 (0.9755)	xded_loss 0.0584 (0.0563)	acc 100.0000 (87.3125)	lr 0.0007679133974894983
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,666
+* accuracy: 42.67%
+* error: 57.33%
+epoch [34/100][10/57]	time 0.414 (0.347)	data 0.366 (0.290)	eta 0:22:03	loss 0.9904 (1.2095)	xded_loss 0.0574 (0.0574)	acc 84.3750 (68.1250)	lr 0.0007545207078751857
+epoch [34/100][20/57]	time 0.066 (0.268)	data 0.001 (0.208)	eta 0:16:58	loss 0.7640 (1.1317)	xded_loss 0.0563 (0.0536)	acc 96.8750 (74.0625)	lr 0.0007545207078751857
+epoch [34/100][30/57]	time 0.083 (0.259)	data 0.001 (0.198)	eta 0:16:20	loss 0.7092 (1.0361)	xded_loss 0.0418 (0.0529)	acc 96.8750 (77.3958)	lr 0.0007545207078751857
+epoch [34/100][40/57]	time 0.080 (0.247)	data 0.006 (0.185)	eta 0:15:34	loss 0.9688 (1.0064)	xded_loss 0.0702 (0.0544)	acc 96.8750 (79.6094)	lr 0.0007545207078751857
+epoch [34/100][50/57]	time 0.087 (0.246)	data 0.010 (0.184)	eta 0:15:28	loss 2.3623 (1.0393)	xded_loss 0.0549 (0.0548)	acc 12.5000 (78.6875)	lr 0.0007545207078751857
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,623
+* accuracy: 41.57%
+* error: 58.43%
+epoch [35/100][10/57]	time 0.161 (0.318)	data 0.116 (0.249)	eta 0:19:51	loss 0.6649 (0.8410)	xded_loss 0.0569 (0.0588)	acc 100.0000 (95.0000)	lr 0.0007408768370508577
+epoch [35/100][20/57]	time 0.057 (0.267)	data 0.001 (0.202)	eta 0:16:38	loss 2.2175 (1.0170)	xded_loss 0.0950 (0.0602)	acc 21.8750 (85.6250)	lr 0.0007408768370508577
+epoch [35/100][30/57]	time 0.289 (0.259)	data 0.232 (0.196)	eta 0:16:07	loss 0.4969 (1.0534)	xded_loss 0.0517 (0.0583)	acc 100.0000 (83.3333)	lr 0.0007408768370508577
+epoch [35/100][40/57]	time 0.066 (0.247)	data 0.001 (0.186)	eta 0:15:18	loss 0.8280 (1.1125)	xded_loss 0.0579 (0.0583)	acc 96.8750 (79.6875)	lr 0.0007408768370508577
+epoch [35/100][50/57]	time 0.162 (0.247)	data 0.120 (0.187)	eta 0:15:16	loss 0.4470 (1.0294)	xded_loss 0.0329 (0.0565)	acc 100.0000 (82.9375)	lr 0.0007408768370508577
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,729
+* accuracy: 44.29%
+* error: 55.71%
+epoch [36/100][10/57]	time 0.141 (0.340)	data 0.098 (0.278)	eta 0:20:57	loss 0.8690 (0.9712)	xded_loss 0.0367 (0.0501)	acc 93.7500 (85.6250)	lr 0.0007269952498697734
+epoch [36/100][20/57]	time 0.128 (0.266)	data 0.078 (0.202)	eta 0:16:20	loss 0.8467 (1.2148)	xded_loss 0.0537 (0.0574)	acc 96.8750 (77.8125)	lr 0.0007269952498697734
+epoch [36/100][30/57]	time 0.077 (0.269)	data 0.002 (0.204)	eta 0:16:29	loss 0.7168 (1.0300)	xded_loss 0.0730 (0.0552)	acc 96.8750 (84.7917)	lr 0.0007269952498697734
+epoch [36/100][40/57]	time 0.060 (0.249)	data 0.000 (0.184)	eta 0:15:13	loss 0.8898 (0.9932)	xded_loss 0.0464 (0.0541)	acc 93.7500 (86.5625)	lr 0.0007269952498697734
+epoch [36/100][50/57]	time 0.094 (0.252)	data 0.000 (0.187)	eta 0:15:22	loss 0.5904 (0.9273)	xded_loss 0.0544 (0.0535)	acc 100.0000 (89.1250)	lr 0.0007269952498697734
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,076
+* accuracy: 53.18%
+* error: 46.82%
+epoch [37/100][10/57]	time 0.144 (0.334)	data 0.089 (0.259)	eta 0:20:15	loss 0.6230 (1.0349)	xded_loss 0.0612 (0.0583)	acc 100.0000 (81.5625)	lr 0.0007128896457825364
+epoch [37/100][20/57]	time 0.079 (0.269)	data 0.001 (0.197)	eta 0:16:14	loss 0.9748 (1.0431)	xded_loss 0.0419 (0.0562)	acc 75.0000 (79.8438)	lr 0.0007128896457825364
+epoch [37/100][30/57]	time 0.067 (0.261)	data 0.000 (0.189)	eta 0:15:45	loss 0.9377 (1.0161)	xded_loss 0.0478 (0.0534)	acc 90.6250 (81.1458)	lr 0.0007128896457825364
+epoch [37/100][40/57]	time 0.074 (0.244)	data 0.000 (0.172)	eta 0:14:38	loss 1.0984 (1.0898)	xded_loss 0.0658 (0.0545)	acc 87.5000 (77.1094)	lr 0.0007128896457825364
+epoch [37/100][50/57]	time 0.091 (0.247)	data 0.001 (0.175)	eta 0:14:47	loss 0.4127 (1.0836)	xded_loss 0.0507 (0.0556)	acc 100.0000 (77.7500)	lr 0.0007128896457825364
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,978
+* accuracy: 50.67%
+* error: 49.33%
+epoch [38/100][10/57]	time 0.129 (0.345)	data 0.078 (0.283)	eta 0:20:36	loss 1.9669 (0.8377)	xded_loss 0.0613 (0.0564)	acc 53.1250 (94.3750)	lr 0.0006985739453173903
+epoch [38/100][20/57]	time 0.069 (0.272)	data 0.000 (0.206)	eta 0:16:10	loss 0.6844 (0.9550)	xded_loss 0.0550 (0.0556)	acc 100.0000 (89.2188)	lr 0.0006985739453173903
+epoch [38/100][30/57]	time 0.143 (0.259)	data 0.084 (0.193)	eta 0:15:21	loss 0.6641 (0.9224)	xded_loss 0.0427 (0.0545)	acc 100.0000 (89.0625)	lr 0.0006985739453173903
+epoch [38/100][40/57]	time 0.064 (0.246)	data 0.003 (0.183)	eta 0:14:34	loss 1.1243 (0.9659)	xded_loss 0.0469 (0.0535)	acc 71.8750 (84.1406)	lr 0.0006985739453173903
+epoch [38/100][50/57]	time 0.168 (0.247)	data 0.114 (0.183)	eta 0:14:34	loss 0.6904 (0.9762)	xded_loss 0.0433 (0.0538)	acc 100.0000 (83.5625)	lr 0.0006985739453173903
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,750
+* accuracy: 44.83%
+* error: 55.17%
+epoch [39/100][10/57]	time 0.367 (0.343)	data 0.315 (0.276)	eta 0:20:07	loss 0.5914 (1.3184)	xded_loss 0.0440 (0.0605)	acc 100.0000 (69.0625)	lr 0.0006840622763423391
+epoch [39/100][20/57]	time 0.077 (0.270)	data 0.000 (0.201)	eta 0:15:48	loss 0.7594 (1.1962)	xded_loss 0.0520 (0.0580)	acc 96.8750 (73.7500)	lr 0.0006840622763423391
+epoch [39/100][30/57]	time 0.143 (0.260)	data 0.100 (0.194)	eta 0:15:11	loss 0.6319 (1.1343)	xded_loss 0.0498 (0.0559)	acc 100.0000 (74.2708)	lr 0.0006840622763423391
+epoch [39/100][40/57]	time 0.077 (0.245)	data 0.000 (0.178)	eta 0:14:15	loss 0.5994 (1.1880)	xded_loss 0.0505 (0.0557)	acc 100.0000 (72.4219)	lr 0.0006840622763423391
+epoch [39/100][50/57]	time 0.079 (0.249)	data 0.000 (0.183)	eta 0:14:27	loss 2.0909 (1.2109)	xded_loss 0.0499 (0.0558)	acc 9.3750 (71.8750)	lr 0.0006840622763423391
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,567
+* accuracy: 40.14%
+* error: 59.86%
+epoch [40/100][10/57]	time 0.080 (0.366)	data 0.006 (0.294)	eta 0:21:09	loss 2.0114 (1.2033)	xded_loss 0.0681 (0.0573)	acc 37.5000 (75.6250)	lr 0.0006693689601226458
+epoch [40/100][20/57]	time 0.061 (0.298)	data 0.000 (0.221)	eta 0:17:10	loss 0.6829 (1.1512)	xded_loss 0.0497 (0.0555)	acc 100.0000 (77.8125)	lr 0.0006693689601226458
+epoch [40/100][30/57]	time 0.106 (0.293)	data 0.000 (0.221)	eta 0:16:48	loss 0.4990 (1.0711)	xded_loss 0.0392 (0.0540)	acc 100.0000 (81.0417)	lr 0.0006693689601226458
+epoch [40/100][40/57]	time 0.090 (0.271)	data 0.021 (0.199)	eta 0:15:31	loss 0.5096 (1.0059)	xded_loss 0.0380 (0.0530)	acc 100.0000 (83.2812)	lr 0.0006693689601226458
+epoch [40/100][50/57]	time 0.046 (0.273)	data 0.000 (0.201)	eta 0:15:36	loss 2.1397 (0.9829)	xded_loss 0.0897 (0.0531)	acc 31.2500 (84.5000)	lr 0.0006693689601226458
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,872
+* accuracy: 47.95%
+* error: 52.05%
+epoch [41/100][10/57]	time 0.277 (0.361)	data 0.216 (0.299)	eta 0:20:29	loss 0.6533 (1.1285)	xded_loss 0.0384 (0.0557)	acc 100.0000 (77.8125)	lr 0.0006545084971874737
+epoch [41/100][20/57]	time 0.089 (0.290)	data 0.001 (0.225)	eta 0:16:25	loss 0.8000 (0.8842)	xded_loss 0.0625 (0.0527)	acc 100.0000 (88.5938)	lr 0.0006545084971874737
+epoch [41/100][30/57]	time 0.308 (0.283)	data 0.266 (0.218)	eta 0:15:59	loss 2.4315 (0.8764)	xded_loss 0.0717 (0.0515)	acc 12.5000 (87.2917)	lr 0.0006545084971874737
+epoch [41/100][40/57]	time 0.085 (0.272)	data 0.000 (0.204)	eta 0:15:18	loss 0.5208 (0.8726)	xded_loss 0.0454 (0.0512)	acc 100.0000 (87.1094)	lr 0.0006545084971874737
+epoch [41/100][50/57]	time 0.054 (0.271)	data 0.000 (0.200)	eta 0:15:11	loss 0.4694 (0.8308)	xded_loss 0.0404 (0.0508)	acc 100.0000 (89.5000)	lr 0.0006545084971874737
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,173
+* accuracy: 55.66%
+* error: 44.34%
+epoch [42/100][10/57]	time 0.083 (0.352)	data 0.000 (0.281)	eta 0:19:39	loss 0.6762 (0.9737)	xded_loss 0.0441 (0.0509)	acc 96.8750 (84.3750)	lr 0.0006394955530196147
+epoch [42/100][20/57]	time 0.074 (0.281)	data 0.020 (0.216)	eta 0:15:40	loss 0.5138 (0.9433)	xded_loss 0.0487 (0.0513)	acc 100.0000 (83.4375)	lr 0.0006394955530196147
+epoch [42/100][30/57]	time 0.184 (0.274)	data 0.114 (0.210)	eta 0:15:14	loss 0.3300 (0.8996)	xded_loss 0.0364 (0.0507)	acc 100.0000 (85.9375)	lr 0.0006394955530196147
+epoch [42/100][40/57]	time 0.077 (0.264)	data 0.001 (0.201)	eta 0:14:38	loss 0.3715 (0.8615)	xded_loss 0.0383 (0.0503)	acc 100.0000 (86.6406)	lr 0.0006394955530196147
+epoch [42/100][50/57]	time 0.253 (0.265)	data 0.199 (0.203)	eta 0:14:36	loss 0.4326 (0.8052)	xded_loss 0.0476 (0.0495)	acc 100.0000 (89.0000)	lr 0.0006394955530196147
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,211
+* accuracy: 56.63%
+* error: 43.37%
+epoch [43/100][10/57]	time 0.129 (0.361)	data 0.002 (0.288)	eta 0:19:49	loss 0.8472 (0.9848)	xded_loss 0.0447 (0.0562)	acc 96.8750 (85.9375)	lr 0.0006243449435824273
+epoch [43/100][20/57]	time 0.074 (0.281)	data 0.000 (0.205)	eta 0:15:23	loss 0.8125 (0.9297)	xded_loss 0.0641 (0.0529)	acc 93.7500 (87.5000)	lr 0.0006243449435824273
+epoch [43/100][30/57]	time 0.167 (0.279)	data 0.118 (0.204)	eta 0:15:12	loss 0.5271 (0.8518)	xded_loss 0.0397 (0.0519)	acc 100.0000 (89.3750)	lr 0.0006243449435824273
+epoch [43/100][40/57]	time 0.107 (0.264)	data 0.000 (0.189)	eta 0:14:20	loss 0.5392 (0.9999)	xded_loss 0.0426 (0.0529)	acc 100.0000 (82.9688)	lr 0.0006243449435824273
+epoch [43/100][50/57]	time 0.122 (0.268)	data 0.001 (0.193)	eta 0:14:31	loss 0.5220 (0.9293)	xded_loss 0.0452 (0.0507)	acc 100.0000 (86.2500)	lr 0.0006243449435824273
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,045
+* accuracy: 52.38%
+* error: 47.62%
+epoch [44/100][10/57]	time 0.433 (0.372)	data 0.375 (0.306)	eta 0:20:04	loss 0.5329 (0.8503)	xded_loss 0.0597 (0.0618)	acc 100.0000 (89.6875)	lr 0.0006090716206982714
+epoch [44/100][20/57]	time 0.077 (0.288)	data 0.005 (0.223)	eta 0:15:30	loss 1.7671 (0.8650)	xded_loss 0.0532 (0.0555)	acc 40.6250 (86.5625)	lr 0.0006090716206982714
+epoch [44/100][30/57]	time 0.370 (0.281)	data 0.312 (0.218)	eta 0:15:03	loss 0.5983 (0.8464)	xded_loss 0.0440 (0.0539)	acc 100.0000 (88.1250)	lr 0.0006090716206982714
+epoch [44/100][40/57]	time 0.124 (0.264)	data 0.000 (0.198)	eta 0:14:06	loss 0.4433 (0.8301)	xded_loss 0.0488 (0.0528)	acc 100.0000 (88.8281)	lr 0.0006090716206982714
+epoch [44/100][50/57]	time 0.447 (0.266)	data 0.411 (0.202)	eta 0:14:11	loss 0.5976 (0.8129)	xded_loss 0.0452 (0.0524)	acc 100.0000 (89.1875)	lr 0.0006090716206982714
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,288
+* accuracy: 58.61%
+* error: 41.39%
+epoch [45/100][10/57]	time 0.134 (0.375)	data 0.004 (0.302)	eta 0:19:54	loss 0.5904 (0.5769)	xded_loss 0.0540 (0.0510)	acc 100.0000 (99.3750)	lr 0.0005936906572928625
+epoch [45/100][20/57]	time 0.074 (0.289)	data 0.000 (0.216)	eta 0:15:16	loss 0.4076 (0.5358)	xded_loss 0.0447 (0.0473)	acc 100.0000 (99.5312)	lr 0.0005936906572928625
+epoch [45/100][30/57]	time 0.085 (0.286)	data 0.000 (0.213)	eta 0:15:03	loss 2.0382 (0.5928)	xded_loss 0.0753 (0.0491)	acc 46.8750 (97.8125)	lr 0.0005936906572928625
+epoch [45/100][40/57]	time 0.095 (0.260)	data 0.000 (0.187)	eta 0:13:38	loss 0.7498 (0.6755)	xded_loss 0.0473 (0.0492)	acc 90.6250 (93.9062)	lr 0.0005936906572928625
+epoch [45/100][50/57]	time 0.067 (0.266)	data 0.002 (0.190)	eta 0:13:55	loss 0.6058 (0.6726)	xded_loss 0.0509 (0.0493)	acc 100.0000 (94.3125)	lr 0.0005936906572928625
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,172
+* accuracy: 55.64%
+* error: 44.36%
+epoch [46/100][10/57]	time 0.181 (0.364)	data 0.100 (0.291)	eta 0:18:56	loss 0.4846 (0.9439)	xded_loss 0.0365 (0.0477)	acc 100.0000 (81.5625)	lr 0.0005782172325201156
+epoch [46/100][20/57]	time 0.072 (0.287)	data 0.000 (0.221)	eta 0:14:54	loss 0.8078 (0.8316)	xded_loss 0.0414 (0.0498)	acc 100.0000 (88.5938)	lr 0.0005782172325201156
+epoch [46/100][30/57]	time 0.145 (0.280)	data 0.077 (0.216)	eta 0:14:28	loss 0.4325 (0.8203)	xded_loss 0.0429 (0.0503)	acc 100.0000 (89.0625)	lr 0.0005782172325201156
+epoch [46/100][40/57]	time 0.080 (0.265)	data 0.002 (0.203)	eta 0:13:39	loss 0.5462 (0.9754)	xded_loss 0.0354 (0.0529)	acc 100.0000 (83.5156)	lr 0.0005782172325201156
+epoch [46/100][50/57]	time 0.185 (0.266)	data 0.134 (0.203)	eta 0:13:42	loss 0.5173 (0.8784)	xded_loss 0.0420 (0.0517)	acc 100.0000 (86.7500)	lr 0.0005782172325201156
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,112
+* accuracy: 54.10%
+* error: 45.90%
+epoch [47/100][10/57]	time 0.280 (0.353)	data 0.227 (0.282)	eta 0:18:01	loss 0.4316 (0.6919)	xded_loss 0.0430 (0.0473)	acc 100.0000 (91.5625)	lr 0.0005626666167821523
+epoch [47/100][20/57]	time 0.118 (0.280)	data 0.076 (0.215)	eta 0:14:17	loss 0.5228 (0.8011)	xded_loss 0.0411 (0.0476)	acc 100.0000 (87.1875)	lr 0.0005626666167821523
+epoch [47/100][30/57]	time 0.173 (0.275)	data 0.123 (0.215)	eta 0:13:58	loss 0.4681 (0.7371)	xded_loss 0.0342 (0.0472)	acc 100.0000 (90.8333)	lr 0.0005626666167821523
+epoch [47/100][40/57]	time 0.062 (0.266)	data 0.001 (0.207)	eta 0:13:28	loss 0.5024 (0.7206)	xded_loss 0.0444 (0.0471)	acc 100.0000 (91.5625)	lr 0.0005626666167821523
+epoch [47/100][50/57]	time 0.160 (0.264)	data 0.116 (0.205)	eta 0:13:18	loss 0.5272 (0.7222)	xded_loss 0.0455 (0.0473)	acc 100.0000 (91.5000)	lr 0.0005626666167821523
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,053
+* accuracy: 52.59%
+* error: 47.41%
+epoch [48/100][10/57]	time 0.071 (0.378)	data 0.000 (0.310)	eta 0:18:56	loss 0.7225 (0.8613)	xded_loss 0.0344 (0.0537)	acc 100.0000 (87.5000)	lr 0.0005470541566592572
+epoch [48/100][20/57]	time 0.072 (0.290)	data 0.000 (0.219)	eta 0:14:30	loss 0.6380 (0.7958)	xded_loss 0.0529 (0.0506)	acc 96.8750 (88.2812)	lr 0.0005470541566592572
+epoch [48/100][30/57]	time 0.065 (0.286)	data 0.004 (0.216)	eta 0:14:16	loss 0.5336 (0.7349)	xded_loss 0.0596 (0.0501)	acc 100.0000 (91.5625)	lr 0.0005470541566592572
+epoch [48/100][40/57]	time 0.063 (0.266)	data 0.000 (0.194)	eta 0:13:12	loss 0.5892 (0.6826)	xded_loss 0.0406 (0.0494)	acc 100.0000 (93.5938)	lr 0.0005470541566592572
+epoch [48/100][50/57]	time 0.076 (0.269)	data 0.007 (0.198)	eta 0:13:20	loss 0.4900 (0.7017)	xded_loss 0.0421 (0.0497)	acc 100.0000 (93.4375)	lr 0.0005470541566592572
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,123
+* accuracy: 54.38%
+* error: 45.62%
+epoch [49/100][10/57]	time 0.039 (0.366)	data 0.000 (0.299)	eta 0:18:00	loss 0.3895 (0.9080)	xded_loss 0.0456 (0.0554)	acc 100.0000 (83.1250)	lr 0.0005313952597646569
+epoch [49/100][20/57]	time 0.081 (0.284)	data 0.001 (0.216)	eta 0:13:54	loss 0.4210 (0.7935)	xded_loss 0.0440 (0.0501)	acc 100.0000 (87.0312)	lr 0.0005313952597646569
+epoch [49/100][30/57]	time 0.078 (0.283)	data 0.005 (0.212)	eta 0:13:49	loss 0.5440 (0.7902)	xded_loss 0.0479 (0.0504)	acc 100.0000 (88.0208)	lr 0.0005313952597646569
+epoch [49/100][40/57]	time 0.077 (0.262)	data 0.001 (0.191)	eta 0:12:46	loss 0.5417 (0.8462)	xded_loss 0.0476 (0.0506)	acc 100.0000 (86.0938)	lr 0.0005313952597646569
+epoch [49/100][50/57]	time 0.149 (0.260)	data 0.100 (0.190)	eta 0:12:39	loss 0.4968 (0.8057)	xded_loss 0.0499 (0.0488)	acc 100.0000 (87.4375)	lr 0.0005313952597646569
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,319
+* accuracy: 59.40%
+* error: 40.60%
+epoch [50/100][10/57]	time 0.069 (0.385)	data 0.002 (0.324)	eta 0:18:33	loss 0.3583 (0.8458)	xded_loss 0.0323 (0.0449)	acc 100.0000 (84.0625)	lr 0.0005157053795390643
+epoch [50/100][20/57]	time 0.084 (0.290)	data 0.003 (0.229)	eta 0:13:55	loss 0.4460 (0.8750)	xded_loss 0.0422 (0.0494)	acc 100.0000 (86.4062)	lr 0.0005157053795390643
+epoch [50/100][30/57]	time 0.195 (0.274)	data 0.146 (0.214)	eta 0:13:07	loss 0.5655 (0.9323)	xded_loss 0.0512 (0.0504)	acc 100.0000 (83.9583)	lr 0.0005157053795390643
+epoch [50/100][40/57]	time 0.053 (0.262)	data 0.005 (0.201)	eta 0:12:31	loss 0.7495 (0.8619)	xded_loss 0.0376 (0.0489)	acc 84.3750 (85.2344)	lr 0.0005157053795390643
+epoch [50/100][50/57]	time 0.151 (0.264)	data 0.022 (0.201)	eta 0:12:33	loss 0.6056 (0.8445)	xded_loss 0.0419 (0.0484)	acc 100.0000 (86.1875)	lr 0.0005157053795390643
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,072
+* accuracy: 53.07%
+* error: 46.93%
+epoch [51/100][10/57]	time 0.140 (0.369)	data 0.000 (0.294)	eta 0:17:27	loss 0.7179 (0.7488)	xded_loss 0.0454 (0.0512)	acc 100.0000 (89.6875)	lr 0.0005000000000000002
+epoch [51/100][20/57]	time 0.114 (0.285)	data 0.052 (0.212)	eta 0:13:26	loss 0.4824 (0.8191)	xded_loss 0.0416 (0.0494)	acc 100.0000 (84.0625)	lr 0.0005000000000000002
+epoch [51/100][30/57]	time 0.259 (0.279)	data 0.207 (0.203)	eta 0:13:07	loss 0.4717 (0.8705)	xded_loss 0.0342 (0.0502)	acc 100.0000 (82.8125)	lr 0.0005000000000000002
+epoch [51/100][40/57]	time 0.113 (0.263)	data 0.057 (0.187)	eta 0:12:19	loss 0.3368 (0.7850)	xded_loss 0.0362 (0.0488)	acc 100.0000 (87.0312)	lr 0.0005000000000000002
+epoch [51/100][50/57]	time 0.246 (0.267)	data 0.195 (0.194)	eta 0:12:28	loss 0.5231 (0.7444)	xded_loss 0.0400 (0.0471)	acc 100.0000 (88.6250)	lr 0.0005000000000000002
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,298
+* accuracy: 58.86%
+* error: 41.14%
+epoch [52/100][10/57]	time 0.075 (0.361)	data 0.001 (0.287)	eta 0:16:45	loss 0.3618 (0.9713)	xded_loss 0.0431 (0.0516)	acc 100.0000 (78.4375)	lr 0.00048429462046093607
+epoch [52/100][20/57]	time 0.098 (0.282)	data 0.000 (0.206)	eta 0:13:01	loss 0.2869 (0.7197)	xded_loss 0.0385 (0.0465)	acc 100.0000 (88.9062)	lr 0.00048429462046093607
+epoch [52/100][30/57]	time 0.157 (0.279)	data 0.005 (0.201)	eta 0:12:49	loss 0.2998 (0.7193)	xded_loss 0.0368 (0.0480)	acc 100.0000 (91.8750)	lr 0.00048429462046093607
+epoch [52/100][40/57]	time 0.057 (0.264)	data 0.017 (0.186)	eta 0:12:05	loss 0.4030 (0.7684)	xded_loss 0.0421 (0.0499)	acc 100.0000 (90.0781)	lr 0.00048429462046093607
+epoch [52/100][50/57]	time 0.139 (0.263)	data 0.087 (0.187)	eta 0:12:01	loss 0.3859 (0.7411)	xded_loss 0.0357 (0.0496)	acc 100.0000 (90.2500)	lr 0.00048429462046093607
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,981
+* accuracy: 50.74%
+* error: 49.26%
+epoch [53/100][10/57]	time 0.141 (0.351)	data 0.069 (0.283)	eta 0:15:57	loss 0.6426 (0.4955)	xded_loss 0.0501 (0.0475)	acc 100.0000 (100.0000)	lr 0.0004686047402353435
+epoch [53/100][20/57]	time 0.093 (0.296)	data 0.000 (0.228)	eta 0:13:22	loss 1.9341 (0.7323)	xded_loss 0.0400 (0.0466)	acc 46.8750 (89.3750)	lr 0.0004686047402353435
+epoch [53/100][30/57]	time 0.327 (0.282)	data 0.262 (0.216)	eta 0:12:42	loss 0.2240 (0.6969)	xded_loss 0.0290 (0.0448)	acc 100.0000 (91.2500)	lr 0.0004686047402353435
+epoch [53/100][40/57]	time 0.059 (0.263)	data 0.000 (0.201)	eta 0:11:50	loss 0.7094 (0.6899)	xded_loss 0.0542 (0.0438)	acc 100.0000 (90.9375)	lr 0.0004686047402353435
+epoch [53/100][50/57]	time 0.320 (0.267)	data 0.234 (0.205)	eta 0:11:57	loss 0.3772 (0.7492)	xded_loss 0.0327 (0.0440)	acc 100.0000 (89.6875)	lr 0.0004686047402353435
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,337
+* accuracy: 59.86%
+* error: 40.14%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-53"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [54/100][10/57]	time 0.302 (0.366)	data 0.257 (0.299)	eta 0:16:17	loss 2.7904 (1.0692)	xded_loss 0.0662 (0.0519)	acc 6.2500 (83.1250)	lr 0.000452945843340743
+epoch [54/100][20/57]	time 0.083 (0.287)	data 0.000 (0.217)	eta 0:12:43	loss 0.4579 (0.8533)	xded_loss 0.0482 (0.0462)	acc 100.0000 (87.0312)	lr 0.000452945843340743
+epoch [54/100][30/57]	time 0.226 (0.281)	data 0.151 (0.210)	eta 0:12:25	loss 2.3431 (0.8339)	xded_loss 0.0793 (0.0456)	acc 28.1250 (86.2500)	lr 0.000452945843340743
+epoch [54/100][40/57]	time 0.073 (0.267)	data 0.000 (0.196)	eta 0:11:44	loss 0.5899 (0.9007)	xded_loss 0.0444 (0.0461)	acc 96.8750 (83.6719)	lr 0.000452945843340743
+epoch [54/100][50/57]	time 0.510 (0.269)	data 0.440 (0.199)	eta 0:11:47	loss 0.4079 (0.8382)	xded_loss 0.0421 (0.0452)	acc 100.0000 (86.0000)	lr 0.000452945843340743
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,103
+* accuracy: 53.87%
+* error: 46.13%
+epoch [55/100][10/57]	time 0.069 (0.355)	data 0.021 (0.293)	eta 0:15:26	loss 0.5100 (0.5613)	xded_loss 0.0588 (0.0463)	acc 100.0000 (97.5000)	lr 0.00043733338321784806
+epoch [55/100][20/57]	time 0.069 (0.285)	data 0.001 (0.223)	eta 0:12:20	loss 0.3642 (0.5892)	xded_loss 0.0424 (0.0445)	acc 100.0000 (95.4688)	lr 0.00043733338321784806
+epoch [55/100][30/57]	time 0.059 (0.277)	data 0.000 (0.215)	eta 0:11:59	loss 0.4226 (0.5466)	xded_loss 0.0541 (0.0432)	acc 100.0000 (96.8750)	lr 0.00043733338321784806
+epoch [55/100][40/57]	time 0.134 (0.263)	data 0.089 (0.198)	eta 0:11:18	loss 0.4130 (0.5205)	xded_loss 0.0501 (0.0432)	acc 100.0000 (97.6562)	lr 0.00043733338321784806
+epoch [55/100][50/57]	time 0.085 (0.264)	data 0.008 (0.198)	eta 0:11:20	loss 0.6197 (0.5100)	xded_loss 0.0734 (0.0436)	acc 96.8750 (98.0625)	lr 0.00043733338321784806
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,230
+* accuracy: 57.12%
+* error: 42.88%
+epoch [56/100][10/57]	time 0.430 (0.370)	data 0.371 (0.305)	eta 0:15:44	loss 0.5319 (0.8136)	xded_loss 0.0563 (0.0467)	acc 100.0000 (87.8125)	lr 0.0004217827674798847
+epoch [56/100][20/57]	time 0.116 (0.290)	data 0.009 (0.224)	eta 0:12:17	loss 0.4974 (0.6986)	xded_loss 0.0381 (0.0453)	acc 100.0000 (92.0312)	lr 0.0004217827674798847
+epoch [56/100][30/57]	time 0.276 (0.284)	data 0.227 (0.221)	eta 0:12:00	loss 0.3848 (0.7343)	xded_loss 0.0317 (0.0457)	acc 100.0000 (90.2083)	lr 0.0004217827674798847
+epoch [56/100][40/57]	time 0.091 (0.265)	data 0.002 (0.200)	eta 0:11:08	loss 0.4922 (0.7064)	xded_loss 0.0332 (0.0454)	acc 100.0000 (90.8594)	lr 0.0004217827674798847
+epoch [56/100][50/57]	time 0.195 (0.265)	data 0.137 (0.201)	eta 0:11:05	loss 2.5213 (0.6950)	xded_loss 0.0758 (0.0449)	acc 15.6250 (91.0000)	lr 0.0004217827674798847
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,228
+* accuracy: 57.07%
+* error: 42.93%
+epoch [57/100][10/57]	time 0.102 (0.362)	data 0.009 (0.297)	eta 0:15:05	loss 0.3881 (0.6123)	xded_loss 0.0361 (0.0403)	acc 100.0000 (92.5000)	lr 0.00040630934270713783
+epoch [57/100][20/57]	time 0.121 (0.278)	data 0.080 (0.215)	eta 0:11:32	loss 2.2787 (0.6998)	xded_loss 0.0610 (0.0423)	acc 21.8750 (88.5938)	lr 0.00040630934270713783
+epoch [57/100][30/57]	time 0.139 (0.273)	data 0.000 (0.202)	eta 0:11:15	loss 2.4523 (0.6785)	xded_loss 0.0442 (0.0415)	acc 15.6250 (89.4792)	lr 0.00040630934270713783
+epoch [57/100][40/57]	time 0.104 (0.261)	data 0.000 (0.191)	eta 0:10:43	loss 0.4547 (0.7088)	xded_loss 0.0503 (0.0432)	acc 100.0000 (89.1406)	lr 0.00040630934270713783
+epoch [57/100][50/57]	time 0.075 (0.261)	data 0.000 (0.191)	eta 0:10:41	loss 0.6702 (0.6645)	xded_loss 0.0522 (0.0426)	acc 100.0000 (91.1875)	lr 0.00040630934270713783
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,044
+* accuracy: 52.36%
+* error: 47.64%
+epoch [58/100][10/57]	time 0.097 (0.357)	data 0.007 (0.281)	eta 0:14:32	loss 0.3944 (0.4294)	xded_loss 0.0390 (0.0392)	acc 100.0000 (100.0000)	lr 0.000390928379301729
+epoch [58/100][20/57]	time 0.114 (0.285)	data 0.001 (0.204)	eta 0:11:33	loss 0.3422 (0.4276)	xded_loss 0.0418 (0.0411)	acc 100.0000 (100.0000)	lr 0.000390928379301729
+epoch [58/100][30/57]	time 0.064 (0.277)	data 0.000 (0.199)	eta 0:11:09	loss 0.2791 (0.5778)	xded_loss 0.0309 (0.0433)	acc 100.0000 (94.3750)	lr 0.000390928379301729
+epoch [58/100][40/57]	time 0.095 (0.261)	data 0.033 (0.184)	eta 0:10:28	loss 1.7009 (0.6390)	xded_loss 0.0418 (0.0427)	acc 59.3750 (92.3438)	lr 0.000390928379301729
+epoch [58/100][50/57]	time 0.093 (0.262)	data 0.000 (0.186)	eta 0:10:29	loss 0.5902 (0.6384)	xded_loss 0.0607 (0.0438)	acc 100.0000 (92.7500)	lr 0.000390928379301729
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,271
+* accuracy: 58.17%
+* error: 41.83%
+epoch [59/100][10/57]	time 0.174 (0.388)	data 0.124 (0.317)	eta 0:15:23	loss 0.3534 (0.5020)	xded_loss 0.0327 (0.0396)	acc 100.0000 (99.6875)	lr 0.0003756550564175727
+epoch [59/100][20/57]	time 0.076 (0.292)	data 0.003 (0.215)	eta 0:11:32	loss 0.4652 (0.5172)	xded_loss 0.0417 (0.0385)	acc 100.0000 (98.5938)	lr 0.0003756550564175727
+epoch [59/100][30/57]	time 0.099 (0.281)	data 0.001 (0.205)	eta 0:11:05	loss 0.5193 (0.5455)	xded_loss 0.0466 (0.0391)	acc 100.0000 (95.9375)	lr 0.0003756550564175727
+epoch [59/100][40/57]	time 0.083 (0.268)	data 0.000 (0.191)	eta 0:10:30	loss 0.6165 (0.5333)	xded_loss 0.0546 (0.0406)	acc 100.0000 (96.9531)	lr 0.0003756550564175727
+epoch [59/100][50/57]	time 0.096 (0.266)	data 0.024 (0.191)	eta 0:10:24	loss 0.3473 (0.5473)	xded_loss 0.0309 (0.0419)	acc 100.0000 (96.4375)	lr 0.0003756550564175727
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,304
+* accuracy: 59.02%
+* error: 40.98%
+epoch [60/100][10/57]	time 0.102 (0.375)	data 0.001 (0.300)	eta 0:14:32	loss 0.3715 (0.5881)	xded_loss 0.0445 (0.0442)	acc 100.0000 (94.6875)	lr 0.00036050444698038553
+epoch [60/100][20/57]	time 0.093 (0.291)	data 0.001 (0.221)	eta 0:11:14	loss 0.4745 (0.5903)	xded_loss 0.0368 (0.0422)	acc 100.0000 (92.9688)	lr 0.00036050444698038553
+epoch [60/100][30/57]	time 0.292 (0.284)	data 0.250 (0.218)	eta 0:10:55	loss 0.4299 (0.5445)	xded_loss 0.0428 (0.0418)	acc 100.0000 (95.2083)	lr 0.00036050444698038553
+epoch [60/100][40/57]	time 0.083 (0.265)	data 0.002 (0.200)	eta 0:10:08	loss 0.3577 (0.5150)	xded_loss 0.0419 (0.0414)	acc 100.0000 (96.3281)	lr 0.00036050444698038553
+epoch [60/100][50/57]	time 0.062 (0.268)	data 0.000 (0.202)	eta 0:10:13	loss 0.3640 (0.5163)	xded_loss 0.0332 (0.0412)	acc 100.0000 (96.4375)	lr 0.00036050444698038553
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,360
+* accuracy: 60.45%
+* error: 39.55%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-60"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [61/100][10/57]	time 0.063 (0.370)	data 0.002 (0.304)	eta 0:14:00	loss 2.1832 (0.5576)	xded_loss 0.0435 (0.0373)	acc 18.7500 (91.8750)	lr 0.00034549150281252655
+epoch [61/100][20/57]	time 0.082 (0.289)	data 0.000 (0.225)	eta 0:10:54	loss 0.6281 (0.5527)	xded_loss 0.0457 (0.0398)	acc 100.0000 (94.2188)	lr 0.00034549150281252655
+epoch [61/100][30/57]	time 0.286 (0.277)	data 0.225 (0.213)	eta 0:10:23	loss 0.2423 (0.5778)	xded_loss 0.0243 (0.0407)	acc 100.0000 (93.0208)	lr 0.00034549150281252655
+epoch [61/100][40/57]	time 0.119 (0.261)	data 0.000 (0.195)	eta 0:09:44	loss 0.3454 (0.5296)	xded_loss 0.0323 (0.0400)	acc 100.0000 (94.7656)	lr 0.00034549150281252655
+epoch [61/100][50/57]	time 0.303 (0.263)	data 0.254 (0.199)	eta 0:09:46	loss 0.4216 (0.5518)	xded_loss 0.0395 (0.0399)	acc 100.0000 (94.3750)	lr 0.00034549150281252655
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,147
+* accuracy: 54.99%
+* error: 45.01%
+epoch [62/100][10/57]	time 0.474 (0.377)	data 0.423 (0.308)	eta 0:13:55	loss 0.3861 (0.8474)	xded_loss 0.0404 (0.0430)	acc 100.0000 (80.9375)	lr 0.0003306310398773544
+epoch [62/100][20/57]	time 0.076 (0.288)	data 0.002 (0.219)	eta 0:10:33	loss 2.2379 (0.9293)	xded_loss 0.0758 (0.0452)	acc 31.2500 (78.5938)	lr 0.0003306310398773544
+epoch [62/100][30/57]	time 0.328 (0.282)	data 0.214 (0.210)	eta 0:10:19	loss 0.2991 (0.8158)	xded_loss 0.0350 (0.0433)	acc 100.0000 (84.1667)	lr 0.0003306310398773544
+epoch [62/100][40/57]	time 0.070 (0.265)	data 0.001 (0.193)	eta 0:09:37	loss 0.3092 (0.7905)	xded_loss 0.0405 (0.0422)	acc 100.0000 (84.4531)	lr 0.0003306310398773544
+epoch [62/100][50/57]	time 0.441 (0.270)	data 0.404 (0.202)	eta 0:09:46	loss 0.3151 (0.7660)	xded_loss 0.0332 (0.0422)	acc 100.0000 (85.5625)	lr 0.0003306310398773544
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,302
+* accuracy: 58.97%
+* error: 41.03%
+epoch [63/100][10/57]	time 0.074 (0.355)	data 0.000 (0.288)	eta 0:12:46	loss 0.4194 (0.9773)	xded_loss 0.0480 (0.0425)	acc 100.0000 (77.5000)	lr 0.00031593772365766127
+epoch [63/100][20/57]	time 0.065 (0.293)	data 0.000 (0.226)	eta 0:10:29	loss 0.4234 (0.8772)	xded_loss 0.0314 (0.0410)	acc 100.0000 (80.3125)	lr 0.00031593772365766127
+epoch [63/100][30/57]	time 0.163 (0.281)	data 0.016 (0.211)	eta 0:09:59	loss 0.4398 (0.9274)	xded_loss 0.0301 (0.0402)	acc 100.0000 (78.7500)	lr 0.00031593772365766127
+epoch [63/100][40/57]	time 0.092 (0.262)	data 0.009 (0.193)	eta 0:09:17	loss 0.5233 (0.8018)	xded_loss 0.0409 (0.0393)	acc 100.0000 (84.0625)	lr 0.00031593772365766127
+epoch [63/100][50/57]	time 0.080 (0.263)	data 0.001 (0.192)	eta 0:09:16	loss 0.5391 (0.7351)	xded_loss 0.0412 (0.0396)	acc 100.0000 (87.1875)	lr 0.00031593772365766127
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,316
+* accuracy: 59.32%
+* error: 40.68%
+epoch [64/100][10/57]	time 0.252 (0.339)	data 0.205 (0.277)	eta 0:11:52	loss 0.3514 (0.5113)	xded_loss 0.0359 (0.0379)	acc 100.0000 (96.8750)	lr 0.0003014260546826097
+epoch [64/100][20/57]	time 0.079 (0.270)	data 0.000 (0.207)	eta 0:09:23	loss 0.3751 (0.5503)	xded_loss 0.0378 (0.0396)	acc 100.0000 (94.8438)	lr 0.0003014260546826097
+epoch [64/100][30/57]	time 0.141 (0.259)	data 0.101 (0.197)	eta 0:08:59	loss 0.4284 (0.5301)	xded_loss 0.0325 (0.0387)	acc 100.0000 (95.4167)	lr 0.0003014260546826097
+epoch [64/100][40/57]	time 0.071 (0.250)	data 0.000 (0.187)	eta 0:08:36	loss 0.2935 (0.5654)	xded_loss 0.0323 (0.0397)	acc 100.0000 (94.1406)	lr 0.0003014260546826097
+epoch [64/100][50/57]	time 0.156 (0.252)	data 0.106 (0.190)	eta 0:08:38	loss 0.4098 (0.5509)	xded_loss 0.0327 (0.0394)	acc 100.0000 (95.1250)	lr 0.0003014260546826097
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,350
+* accuracy: 60.19%
+* error: 39.81%
+epoch [65/100][10/57]	time 0.137 (0.323)	data 0.093 (0.255)	eta 0:10:59	loss 0.3555 (0.5866)	xded_loss 0.0359 (0.0365)	acc 100.0000 (91.8750)	lr 0.0002871103542174637
+epoch [65/100][20/57]	time 0.057 (0.268)	data 0.012 (0.200)	eta 0:09:05	loss 0.2917 (0.6386)	xded_loss 0.0315 (0.0405)	acc 100.0000 (91.2500)	lr 0.0002871103542174637
+epoch [65/100][30/57]	time 0.285 (0.264)	data 0.230 (0.199)	eta 0:08:54	loss 1.5340 (0.6487)	xded_loss 0.0811 (0.0417)	acc 71.8750 (91.5625)	lr 0.0002871103542174637
+epoch [65/100][40/57]	time 0.154 (0.250)	data 0.109 (0.185)	eta 0:08:23	loss 0.5339 (0.6426)	xded_loss 0.0354 (0.0410)	acc 100.0000 (91.1719)	lr 0.0002871103542174637
+epoch [65/100][50/57]	time 0.162 (0.250)	data 0.109 (0.189)	eta 0:08:21	loss 0.4296 (0.7043)	xded_loss 0.0504 (0.0425)	acc 100.0000 (89.1250)	lr 0.0002871103542174637
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,438
+* accuracy: 62.45%
+* error: 37.55%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-65"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [66/100][10/57]	time 0.167 (0.348)	data 0.110 (0.290)	eta 0:11:30	loss 0.3679 (0.8930)	xded_loss 0.0326 (0.0374)	acc 100.0000 (76.2500)	lr 0.0002730047501302267
+epoch [66/100][20/57]	time 0.059 (0.289)	data 0.005 (0.233)	eta 0:09:31	loss 0.4081 (0.6441)	xded_loss 0.0362 (0.0382)	acc 100.0000 (88.1250)	lr 0.0002730047501302267
+epoch [66/100][30/57]	time 0.166 (0.278)	data 0.117 (0.223)	eta 0:09:05	loss 0.4127 (0.5644)	xded_loss 0.0417 (0.0391)	acc 100.0000 (92.0833)	lr 0.0002730047501302267
+epoch [66/100][40/57]	time 0.193 (0.266)	data 0.148 (0.211)	eta 0:08:40	loss 0.3229 (0.5601)	xded_loss 0.0415 (0.0397)	acc 100.0000 (92.4219)	lr 0.0002730047501302267
+epoch [66/100][50/57]	time 0.161 (0.267)	data 0.111 (0.212)	eta 0:08:38	loss 0.3664 (0.6184)	xded_loss 0.0333 (0.0407)	acc 100.0000 (91.3750)	lr 0.0002730047501302267
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,187
+* accuracy: 56.02%
+* error: 43.98%
+epoch [67/100][10/57]	time 0.434 (0.375)	data 0.393 (0.315)	eta 0:12:02	loss 0.2528 (0.4204)	xded_loss 0.0302 (0.0354)	acc 100.0000 (100.0000)	lr 0.00025912316294914234
+epoch [67/100][20/57]	time 0.089 (0.291)	data 0.001 (0.225)	eta 0:09:17	loss 0.4352 (0.5554)	xded_loss 0.0370 (0.0372)	acc 100.0000 (94.8438)	lr 0.00025912316294914234
+epoch [67/100][30/57]	time 0.423 (0.283)	data 0.383 (0.221)	eta 0:09:00	loss 0.4410 (0.5927)	xded_loss 0.0478 (0.0379)	acc 100.0000 (93.4375)	lr 0.00025912316294914234
+epoch [67/100][40/57]	time 0.063 (0.267)	data 0.001 (0.205)	eta 0:08:27	loss 0.3720 (0.5995)	xded_loss 0.0380 (0.0378)	acc 100.0000 (93.4375)	lr 0.00025912316294914234
+epoch [67/100][50/57]	time 0.323 (0.265)	data 0.282 (0.204)	eta 0:08:20	loss 0.4786 (0.5536)	xded_loss 0.0271 (0.0368)	acc 100.0000 (94.7500)	lr 0.00025912316294914234
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 1,940
+* accuracy: 49.69%
+* error: 50.31%
+epoch [68/100][10/57]	time 0.162 (0.359)	data 0.118 (0.300)	eta 0:11:11	loss 0.3997 (0.3345)	xded_loss 0.0433 (0.0364)	acc 100.0000 (100.0000)	lr 0.0002454792921248144
+epoch [68/100][20/57]	time 0.075 (0.288)	data 0.002 (0.222)	eta 0:08:55	loss 0.5164 (0.4455)	xded_loss 0.0385 (0.0376)	acc 100.0000 (97.8125)	lr 0.0002454792921248144
+epoch [68/100][30/57]	time 0.079 (0.282)	data 0.001 (0.215)	eta 0:08:42	loss 0.4425 (0.4373)	xded_loss 0.0365 (0.0380)	acc 100.0000 (98.5417)	lr 0.0002454792921248144
+epoch [68/100][40/57]	time 0.094 (0.265)	data 0.007 (0.195)	eta 0:08:07	loss 0.2785 (0.4618)	xded_loss 0.0310 (0.0383)	acc 100.0000 (97.5781)	lr 0.0002454792921248144
+epoch [68/100][50/57]	time 0.080 (0.270)	data 0.002 (0.200)	eta 0:08:13	loss 0.5123 (0.5397)	xded_loss 0.0488 (0.0389)	acc 100.0000 (94.3750)	lr 0.0002454792921248144
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,162
+* accuracy: 55.38%
+* error: 44.62%
+epoch [69/100][10/57]	time 0.260 (0.363)	data 0.215 (0.300)	eta 0:10:59	loss 0.3106 (0.5733)	xded_loss 0.0369 (0.0372)	acc 100.0000 (90.9375)	lr 0.00023208660251050164
+epoch [69/100][20/57]	time 0.084 (0.285)	data 0.005 (0.222)	eta 0:08:33	loss 1.5761 (0.6128)	xded_loss 0.0440 (0.0379)	acc 71.8750 (90.0000)	lr 0.00023208660251050164
+epoch [69/100][30/57]	time 0.061 (0.283)	data 0.001 (0.220)	eta 0:08:27	loss 0.2553 (0.5373)	xded_loss 0.0327 (0.0366)	acc 100.0000 (93.3333)	lr 0.00023208660251050164
+epoch [69/100][40/57]	time 0.091 (0.265)	data 0.000 (0.200)	eta 0:07:52	loss 0.3291 (0.4972)	xded_loss 0.0375 (0.0357)	acc 100.0000 (95.0000)	lr 0.00023208660251050164
+epoch [69/100][50/57]	time 0.070 (0.265)	data 0.000 (0.201)	eta 0:07:49	loss 0.2851 (0.5040)	xded_loss 0.0310 (0.0362)	acc 100.0000 (94.6875)	lr 0.00023208660251050164
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,187
+* accuracy: 56.02%
+* error: 43.98%
+epoch [70/100][10/57]	time 0.291 (0.356)	data 0.246 (0.292)	eta 0:10:24	loss 1.8385 (0.5450)	xded_loss 0.0395 (0.0339)	acc 31.2500 (93.1250)	lr 0.00021895831107393473
+epoch [70/100][20/57]	time 0.093 (0.280)	data 0.038 (0.219)	eta 0:08:09	loss 0.3703 (0.4560)	xded_loss 0.0318 (0.0351)	acc 100.0000 (96.4062)	lr 0.00021895831107393473
+epoch [70/100][30/57]	time 0.174 (0.275)	data 0.128 (0.215)	eta 0:07:57	loss 0.3949 (0.6223)	xded_loss 0.0401 (0.0381)	acc 100.0000 (89.4792)	lr 0.00021895831107393473
+epoch [70/100][40/57]	time 0.087 (0.271)	data 0.002 (0.208)	eta 0:07:47	loss 0.3172 (0.5963)	xded_loss 0.0363 (0.0380)	acc 100.0000 (90.7812)	lr 0.00021895831107393473
+epoch [70/100][50/57]	time 0.149 (0.267)	data 0.103 (0.204)	eta 0:07:37	loss 0.2948 (0.5767)	xded_loss 0.0331 (0.0376)	acc 100.0000 (91.9375)	lr 0.00021895831107393473
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,290
+* accuracy: 58.66%
+* error: 41.34%
+epoch [71/100][10/57]	time 0.315 (0.357)	data 0.262 (0.290)	eta 0:10:07	loss 0.3389 (0.3256)	xded_loss 0.0391 (0.0320)	acc 100.0000 (100.0000)	lr 0.00020610737385376356
+epoch [71/100][20/57]	time 0.084 (0.288)	data 0.000 (0.226)	eta 0:08:05	loss 0.3272 (0.5115)	xded_loss 0.0351 (0.0368)	acc 100.0000 (94.6875)	lr 0.00020610737385376356
+epoch [71/100][30/57]	time 0.291 (0.278)	data 0.221 (0.216)	eta 0:07:47	loss 1.6378 (0.6620)	xded_loss 0.0461 (0.0389)	acc 62.5000 (90.0000)	lr 0.00020610737385376356
+epoch [71/100][40/57]	time 0.079 (0.264)	data 0.006 (0.204)	eta 0:07:21	loss 0.3643 (0.5903)	xded_loss 0.0341 (0.0382)	acc 100.0000 (92.5000)	lr 0.00020610737385376356
+epoch [71/100][50/57]	time 0.316 (0.265)	data 0.274 (0.206)	eta 0:07:19	loss 0.3505 (0.5749)	xded_loss 0.0300 (0.0371)	acc 100.0000 (92.3125)	lr 0.00020610737385376356
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,245
+* accuracy: 57.51%
+* error: 42.49%
+epoch [72/100][10/57]	time 0.158 (0.376)	data 0.105 (0.302)	eta 0:10:17	loss 0.3153 (0.4057)	xded_loss 0.0364 (0.0356)	acc 100.0000 (100.0000)	lr 0.00019354647317351177
+epoch [72/100][20/57]	time 0.092 (0.288)	data 0.000 (0.220)	eta 0:07:50	loss 0.3740 (0.3781)	xded_loss 0.0315 (0.0347)	acc 100.0000 (100.0000)	lr 0.00019354647317351177
+epoch [72/100][30/57]	time 0.260 (0.282)	data 0.219 (0.215)	eta 0:07:36	loss 1.7148 (0.4124)	xded_loss 0.0470 (0.0346)	acc 59.3750 (98.6458)	lr 0.00019354647317351177
+epoch [72/100][40/57]	time 0.063 (0.263)	data 0.001 (0.197)	eta 0:07:04	loss 0.3529 (0.4316)	xded_loss 0.0340 (0.0350)	acc 100.0000 (98.3594)	lr 0.00019354647317351177
+epoch [72/100][50/57]	time 0.470 (0.269)	data 0.408 (0.203)	eta 0:07:10	loss 0.3800 (0.5034)	xded_loss 0.0348 (0.0369)	acc 100.0000 (95.7500)	lr 0.00019354647317351177
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,179
+* accuracy: 55.81%
+* error: 44.19%
+epoch [73/100][10/57]	time 0.043 (0.370)	data 0.000 (0.305)	eta 0:09:47	loss 0.3430 (0.3319)	xded_loss 0.0359 (0.0351)	acc 100.0000 (100.0000)	lr 0.0001812880051256552
+epoch [73/100][20/57]	time 0.088 (0.287)	data 0.006 (0.222)	eta 0:07:32	loss 0.3671 (0.4286)	xded_loss 0.0501 (0.0368)	acc 100.0000 (96.7188)	lr 0.0001812880051256552
+epoch [73/100][30/57]	time 0.109 (0.281)	data 0.000 (0.214)	eta 0:07:20	loss 2.0907 (0.4655)	xded_loss 0.0538 (0.0377)	acc 37.5000 (95.7292)	lr 0.0001812880051256552
+epoch [73/100][40/57]	time 0.076 (0.262)	data 0.001 (0.193)	eta 0:06:48	loss 0.3001 (0.5095)	xded_loss 0.0324 (0.0378)	acc 100.0000 (95.2344)	lr 0.0001812880051256552
+epoch [73/100][50/57]	time 0.105 (0.265)	data 0.000 (0.195)	eta 0:06:49	loss 0.2795 (0.4731)	xded_loss 0.0320 (0.0369)	acc 100.0000 (96.1875)	lr 0.0001812880051256552
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,444
+* accuracy: 62.60%
+* error: 37.40%
+Checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model.pth.tar-73"
+Best checkpoint saved to "logs/sketch/XDED_XDED_UniStyle12/model/model-best.pth.tar"
+epoch [74/100][10/57]	time 0.078 (0.367)	data 0.000 (0.303)	eta 0:09:21	loss 1.7583 (0.6911)	xded_loss 0.0500 (0.0364)	acc 59.3750 (89.3750)	lr 0.00016934406733817422
+epoch [74/100][20/57]	time 0.078 (0.283)	data 0.001 (0.213)	eta 0:07:10	loss 0.2590 (0.6145)	xded_loss 0.0249 (0.0358)	acc 100.0000 (90.4688)	lr 0.00016934406733817422
+epoch [74/100][30/57]	time 0.125 (0.278)	data 0.003 (0.208)	eta 0:06:59	loss 0.3424 (0.6214)	xded_loss 0.0335 (0.0357)	acc 100.0000 (89.4792)	lr 0.00016934406733817422
+epoch [74/100][40/57]	time 0.101 (0.258)	data 0.053 (0.188)	eta 0:06:27	loss 1.5420 (0.7102)	xded_loss 0.0560 (0.0384)	acc 56.2500 (86.4062)	lr 0.00016934406733817422
+epoch [74/100][50/57]	time 0.079 (0.267)	data 0.001 (0.196)	eta 0:06:37	loss 1.9465 (0.7037)	xded_loss 0.0501 (0.0378)	acc 28.1250 (86.1250)	lr 0.00016934406733817422
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,237
+* accuracy: 57.30%
+* error: 42.70%
+epoch [75/100][10/57]	time 0.473 (0.372)	data 0.429 (0.309)	eta 0:09:07	loss 0.3797 (1.0895)	xded_loss 0.0465 (0.0413)	acc 100.0000 (73.4375)	lr 0.0001577264470356557
+epoch [75/100][20/57]	time 0.055 (0.291)	data 0.001 (0.225)	eta 0:07:05	loss 0.3311 (0.8829)	xded_loss 0.0360 (0.0398)	acc 100.0000 (79.8438)	lr 0.0001577264470356557
+epoch [75/100][30/57]	time 0.182 (0.284)	data 0.125 (0.220)	eta 0:06:52	loss 1.9690 (0.8253)	xded_loss 0.0469 (0.0398)	acc 37.5000 (82.3958)	lr 0.0001577264470356557
+epoch [75/100][40/57]	time 0.066 (0.264)	data 0.001 (0.200)	eta 0:06:21	loss 0.2701 (0.7495)	xded_loss 0.0303 (0.0393)	acc 100.0000 (85.3906)	lr 0.0001577264470356557
+epoch [75/100][50/57]	time 0.069 (0.263)	data 0.000 (0.199)	eta 0:06:15	loss 0.3612 (0.7045)	xded_loss 0.0319 (0.0389)	acc 100.0000 (87.4375)	lr 0.0001577264470356557
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,085
+* accuracy: 53.41%
+* error: 46.59%
+epoch [76/100][10/57]	time 0.438 (0.361)	data 0.397 (0.304)	eta 0:08:30	loss 0.2920 (0.6734)	xded_loss 0.0297 (0.0357)	acc 100.0000 (87.1875)	lr 0.00014644660940672634
+epoch [76/100][20/57]	time 0.102 (0.278)	data 0.039 (0.216)	eta 0:06:30	loss 0.2717 (0.6675)	xded_loss 0.0315 (0.0371)	acc 100.0000 (87.1875)	lr 0.00014644660940672634
+epoch [76/100][30/57]	time 0.461 (0.280)	data 0.417 (0.220)	eta 0:06:30	loss 0.4105 (0.7268)	xded_loss 0.0379 (0.0381)	acc 100.0000 (85.7292)	lr 0.00014644660940672634
+epoch [76/100][40/57]	time 0.085 (0.262)	data 0.009 (0.201)	eta 0:06:03	loss 0.3691 (0.7181)	xded_loss 0.0281 (0.0383)	acc 100.0000 (86.7188)	lr 0.00014644660940672634
+epoch [76/100][50/57]	time 0.078 (0.266)	data 0.000 (0.202)	eta 0:06:06	loss 0.3111 (0.6762)	xded_loss 0.0328 (0.0378)	acc 100.0000 (88.1875)	lr 0.00014644660940672634
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,366
+* accuracy: 60.60%
+* error: 39.40%
+epoch [77/100][10/57]	time 0.285 (0.362)	data 0.225 (0.299)	eta 0:08:10	loss 0.2687 (0.6905)	xded_loss 0.0311 (0.0365)	acc 100.0000 (84.6875)	lr 0.0001355156862892944
+epoch [77/100][20/57]	time 0.077 (0.282)	data 0.008 (0.222)	eta 0:06:19	loss 0.3167 (0.6008)	xded_loss 0.0303 (0.0358)	acc 100.0000 (89.8438)	lr 0.0001355156862892944
+epoch [77/100][30/57]	time 0.083 (0.275)	data 0.005 (0.212)	eta 0:06:07	loss 0.3024 (0.5577)	xded_loss 0.0304 (0.0345)	acc 100.0000 (91.2500)	lr 0.0001355156862892944
+epoch [77/100][40/57]	time 0.131 (0.258)	data 0.020 (0.193)	eta 0:05:42	loss 0.3256 (0.5828)	xded_loss 0.0447 (0.0362)	acc 100.0000 (91.7188)	lr 0.0001355156862892944
+epoch [77/100][50/57]	time 0.305 (0.263)	data 0.258 (0.198)	eta 0:05:46	loss 0.4297 (0.5751)	xded_loss 0.0437 (0.0364)	acc 100.0000 (92.1250)	lr 0.0001355156862892944
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,263
+* accuracy: 57.97%
+* error: 42.03%
+epoch [78/100][10/57]	time 0.043 (0.339)	data 0.001 (0.274)	eta 0:07:21	loss 0.3321 (0.6157)	xded_loss 0.0267 (0.0370)	acc 100.0000 (92.8125)	lr 0.00012494446518477025
+epoch [78/100][20/57]	time 0.078 (0.276)	data 0.002 (0.207)	eta 0:05:56	loss 0.2585 (0.5660)	xded_loss 0.0253 (0.0369)	acc 100.0000 (94.3750)	lr 0.00012494446518477025
+epoch [78/100][30/57]	time 0.079 (0.273)	data 0.005 (0.207)	eta 0:05:49	loss 0.3423 (0.6950)	xded_loss 0.0400 (0.0391)	acc 100.0000 (90.8333)	lr 0.00012494446518477025
+epoch [78/100][40/57]	time 0.095 (0.258)	data 0.018 (0.191)	eta 0:05:27	loss 0.3303 (0.6569)	xded_loss 0.0401 (0.0386)	acc 100.0000 (90.8594)	lr 0.00012494446518477025
+epoch [78/100][50/57]	time 0.070 (0.260)	data 0.000 (0.193)	eta 0:05:27	loss 0.3427 (0.6572)	xded_loss 0.0305 (0.0380)	acc 100.0000 (90.1875)	lr 0.00012494446518477025
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,114
+* accuracy: 54.15%
+* error: 45.85%
+epoch [79/100][10/57]	time 0.089 (0.356)	data 0.002 (0.284)	eta 0:07:22	loss 0.2820 (0.5041)	xded_loss 0.0293 (0.0351)	acc 100.0000 (96.5625)	lr 0.00011474337861210548
+epoch [79/100][20/57]	time 0.063 (0.282)	data 0.016 (0.214)	eta 0:05:48	loss 1.6180 (0.5669)	xded_loss 0.0645 (0.0382)	acc 81.2500 (95.0000)	lr 0.00011474337861210548
+epoch [79/100][30/57]	time 0.077 (0.271)	data 0.002 (0.205)	eta 0:05:31	loss 0.5839 (0.4975)	xded_loss 0.0314 (0.0361)	acc 100.0000 (96.6667)	lr 0.00011474337861210548
+epoch [79/100][40/57]	time 0.071 (0.258)	data 0.006 (0.191)	eta 0:05:13	loss 0.3770 (0.4582)	xded_loss 0.0345 (0.0355)	acc 100.0000 (97.5000)	lr 0.00011474337861210548
+epoch [79/100][50/57]	time 0.082 (0.260)	data 0.005 (0.195)	eta 0:05:13	loss 0.3442 (0.4665)	xded_loss 0.0304 (0.0350)	acc 100.0000 (96.7500)	lr 0.00011474337861210548
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,218
+* accuracy: 56.81%
+* error: 43.19%
+epoch [80/100][10/57]	time 0.169 (0.354)	data 0.118 (0.289)	eta 0:06:59	loss 0.3294 (0.4466)	xded_loss 0.0344 (0.0322)	acc 100.0000 (97.8125)	lr 0.00010492249381215483
+epoch [80/100][20/57]	time 0.084 (0.273)	data 0.002 (0.207)	eta 0:05:21	loss 0.3105 (0.3954)	xded_loss 0.0323 (0.0312)	acc 100.0000 (98.9062)	lr 0.00010492249381215483
+epoch [80/100][30/57]	time 0.414 (0.268)	data 0.375 (0.205)	eta 0:05:12	loss 0.3430 (0.4205)	xded_loss 0.0367 (0.0321)	acc 100.0000 (97.9167)	lr 0.00010492249381215483
+epoch [80/100][40/57]	time 0.059 (0.247)	data 0.001 (0.184)	eta 0:04:46	loss 1.2953 (0.4910)	xded_loss 0.0506 (0.0347)	acc 90.6250 (96.7188)	lr 0.00010492249381215483
+epoch [80/100][50/57]	time 0.176 (0.247)	data 0.123 (0.183)	eta 0:04:42	loss 0.4579 (0.5304)	xded_loss 0.0326 (0.0350)	acc 100.0000 (94.3750)	lr 0.00010492249381215483
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,112
+* accuracy: 54.10%
+* error: 45.90%
+epoch [81/100][10/57]	time 0.071 (0.366)	data 0.000 (0.292)	eta 0:06:54	loss 0.2981 (0.4483)	xded_loss 0.0228 (0.0306)	acc 100.0000 (99.3750)	lr 9.549150281252637e-05
+epoch [81/100][20/57]	time 0.064 (0.275)	data 0.000 (0.200)	eta 0:05:07	loss 1.9702 (0.6430)	xded_loss 0.0473 (0.0347)	acc 31.2500 (90.6250)	lr 9.549150281252637e-05
+epoch [81/100][30/57]	time 0.081 (0.269)	data 0.004 (0.195)	eta 0:04:59	loss 0.3057 (0.6347)	xded_loss 0.0282 (0.0353)	acc 100.0000 (91.8750)	lr 9.549150281252637e-05
+epoch [81/100][40/57]	time 0.081 (0.252)	data 0.007 (0.176)	eta 0:04:37	loss 0.3964 (0.5896)	xded_loss 0.0459 (0.0352)	acc 100.0000 (93.5938)	lr 9.549150281252637e-05
+epoch [81/100][50/57]	time 0.067 (0.256)	data 0.003 (0.182)	eta 0:04:39	loss 0.2213 (0.5655)	xded_loss 0.0256 (0.0351)	acc 100.0000 (93.8125)	lr 9.549150281252637e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,181
+* accuracy: 55.87%
+* error: 44.13%
+epoch [82/100][10/57]	time 0.422 (0.351)	data 0.373 (0.293)	eta 0:06:16	loss 2.0998 (0.8288)	xded_loss 0.0595 (0.0356)	acc 46.8750 (81.5625)	lr 8.645971286271918e-05
+epoch [82/100][20/57]	time 0.061 (0.270)	data 0.000 (0.213)	eta 0:04:47	loss 0.4138 (0.6718)	xded_loss 0.0314 (0.0347)	acc 100.0000 (87.8125)	lr 8.645971286271918e-05
+epoch [82/100][30/57]	time 0.461 (0.268)	data 0.423 (0.210)	eta 0:04:42	loss 0.3399 (0.5655)	xded_loss 0.0333 (0.0348)	acc 100.0000 (91.8750)	lr 8.645971286271918e-05
+epoch [82/100][40/57]	time 0.122 (0.252)	data 0.000 (0.191)	eta 0:04:23	loss 0.3691 (0.5055)	xded_loss 0.0432 (0.0349)	acc 100.0000 (93.9062)	lr 8.645971286271918e-05
+epoch [82/100][50/57]	time 0.130 (0.253)	data 0.090 (0.193)	eta 0:04:21	loss 0.5809 (0.5100)	xded_loss 0.0590 (0.0355)	acc 100.0000 (94.1875)	lr 8.645971286271918e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,241
+* accuracy: 57.40%
+* error: 42.60%
+epoch [83/100][10/57]	time 0.292 (0.344)	data 0.245 (0.280)	eta 0:05:49	loss 0.5156 (0.3681)	xded_loss 0.0500 (0.0355)	acc 100.0000 (100.0000)	lr 7.78360372489926e-05
+epoch [83/100][20/57]	time 0.059 (0.271)	data 0.002 (0.209)	eta 0:04:32	loss 0.3265 (0.4377)	xded_loss 0.0347 (0.0362)	acc 100.0000 (96.8750)	lr 7.78360372489926e-05
+epoch [83/100][30/57]	time 0.178 (0.263)	data 0.111 (0.205)	eta 0:04:22	loss 0.3633 (0.4056)	xded_loss 0.0284 (0.0351)	acc 100.0000 (97.9167)	lr 7.78360372489926e-05
+epoch [83/100][40/57]	time 0.069 (0.253)	data 0.012 (0.196)	eta 0:04:09	loss 2.0914 (0.5395)	xded_loss 0.0628 (0.0370)	acc 43.7500 (93.7500)	lr 7.78360372489926e-05
+epoch [83/100][50/57]	time 0.152 (0.252)	data 0.086 (0.195)	eta 0:04:06	loss 0.3304 (0.5277)	xded_loss 0.0285 (0.0363)	acc 100.0000 (94.3750)	lr 7.78360372489926e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,271
+* accuracy: 58.17%
+* error: 41.83%
+epoch [84/100][10/57]	time 0.160 (0.357)	data 0.110 (0.284)	eta 0:05:41	loss 0.3337 (0.6057)	xded_loss 0.0335 (0.0329)	acc 100.0000 (91.8750)	lr 6.962898649802815e-05
+epoch [84/100][20/57]	time 0.068 (0.275)	data 0.006 (0.207)	eta 0:04:21	loss 0.3653 (0.5347)	xded_loss 0.0313 (0.0322)	acc 100.0000 (93.4375)	lr 6.962898649802815e-05
+epoch [84/100][30/57]	time 0.072 (0.270)	data 0.002 (0.205)	eta 0:04:13	loss 0.3852 (0.4564)	xded_loss 0.0303 (0.0309)	acc 100.0000 (95.6250)	lr 6.962898649802815e-05
+epoch [84/100][40/57]	time 0.064 (0.251)	data 0.000 (0.186)	eta 0:03:53	loss 0.3144 (0.4649)	xded_loss 0.0296 (0.0329)	acc 100.0000 (95.6250)	lr 6.962898649802815e-05
+epoch [84/100][50/57]	time 0.165 (0.255)	data 0.109 (0.191)	eta 0:03:54	loss 0.2305 (0.5072)	xded_loss 0.0235 (0.0341)	acc 100.0000 (94.1250)	lr 6.962898649802815e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,277
+* accuracy: 58.32%
+* error: 41.68%
+epoch [85/100][10/57]	time 0.420 (0.354)	data 0.373 (0.293)	eta 0:05:19	loss 1.7645 (0.4747)	xded_loss 0.0407 (0.0343)	acc 53.1250 (95.3125)	lr 6.184665997806824e-05
+epoch [85/100][20/57]	time 0.058 (0.271)	data 0.000 (0.209)	eta 0:04:01	loss 0.3701 (0.5677)	xded_loss 0.0464 (0.0365)	acc 100.0000 (93.2812)	lr 6.184665997806824e-05
+epoch [85/100][30/57]	time 0.121 (0.269)	data 0.080 (0.208)	eta 0:03:57	loss 0.4320 (0.6823)	xded_loss 0.0279 (0.0379)	acc 100.0000 (91.0417)	lr 6.184665997806824e-05
+epoch [85/100][40/57]	time 0.076 (0.252)	data 0.005 (0.190)	eta 0:03:39	loss 0.3400 (0.6610)	xded_loss 0.0340 (0.0365)	acc 100.0000 (91.7969)	lr 6.184665997806824e-05
+epoch [85/100][50/57]	time 0.182 (0.254)	data 0.135 (0.193)	eta 0:03:39	loss 0.3569 (0.5898)	xded_loss 0.0255 (0.0352)	acc 100.0000 (93.4375)	lr 6.184665997806824e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,287
+* accuracy: 58.58%
+* error: 41.42%
+epoch [86/100][10/57]	time 0.077 (0.339)	data 0.001 (0.275)	eta 0:04:46	loss 0.4152 (0.5619)	xded_loss 0.0370 (0.0362)	acc 100.0000 (93.7500)	lr 5.449673790581613e-05
+epoch [86/100][20/57]	time 0.070 (0.279)	data 0.003 (0.214)	eta 0:03:53	loss 1.6610 (0.6468)	xded_loss 0.0467 (0.0363)	acc 56.2500 (91.2500)	lr 5.449673790581613e-05
+epoch [86/100][30/57]	time 0.084 (0.277)	data 0.001 (0.214)	eta 0:03:48	loss 0.3219 (0.5347)	xded_loss 0.0288 (0.0337)	acc 100.0000 (94.1667)	lr 5.449673790581613e-05
+epoch [86/100][40/57]	time 0.081 (0.256)	data 0.009 (0.191)	eta 0:03:28	loss 0.2615 (0.5687)	xded_loss 0.0283 (0.0344)	acc 100.0000 (92.8125)	lr 5.449673790581613e-05
+epoch [86/100][50/57]	time 0.071 (0.258)	data 0.000 (0.193)	eta 0:03:27	loss 0.4395 (0.5538)	xded_loss 0.0458 (0.0343)	acc 100.0000 (93.5625)	lr 5.449673790581613e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,219
+* accuracy: 56.84%
+* error: 43.16%
+epoch [87/100][10/57]	time 0.312 (0.349)	data 0.253 (0.291)	eta 0:04:34	loss 2.0122 (0.8096)	xded_loss 0.0813 (0.0374)	acc 53.1250 (85.0000)	lr 4.758647376699034e-05
+epoch [87/100][20/57]	time 0.064 (0.276)	data 0.001 (0.218)	eta 0:03:34	loss 0.3380 (0.5867)	xded_loss 0.0329 (0.0371)	acc 100.0000 (92.5000)	lr 4.758647376699034e-05
+epoch [87/100][30/57]	time 0.297 (0.270)	data 0.239 (0.213)	eta 0:03:27	loss 0.3951 (0.6561)	xded_loss 0.0322 (0.0372)	acc 100.0000 (91.1458)	lr 4.758647376699034e-05
+epoch [87/100][40/57]	time 0.082 (0.255)	data 0.001 (0.197)	eta 0:03:13	loss 2.0998 (0.6605)	xded_loss 0.0429 (0.0365)	acc 31.2500 (90.0781)	lr 4.758647376699034e-05
+epoch [87/100][50/57]	time 0.194 (0.256)	data 0.127 (0.198)	eta 0:03:11	loss 1.4468 (0.6692)	xded_loss 0.0233 (0.0356)	acc 84.3750 (90.5000)	lr 4.758647376699034e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,207
+* accuracy: 56.53%
+* error: 43.47%
+epoch [88/100][10/57]	time 0.089 (0.367)	data 0.003 (0.300)	eta 0:04:28	loss 0.3501 (0.7940)	xded_loss 0.0316 (0.0390)	acc 100.0000 (86.2500)	lr 4.112268715800956e-05
+epoch [88/100][20/57]	time 0.069 (0.285)	data 0.001 (0.215)	eta 0:03:25	loss 0.2575 (0.6249)	xded_loss 0.0327 (0.0357)	acc 100.0000 (91.5625)	lr 4.112268715800956e-05
+epoch [88/100][30/57]	time 0.054 (0.275)	data 0.004 (0.207)	eta 0:03:15	loss 0.2606 (0.5208)	xded_loss 0.0300 (0.0343)	acc 100.0000 (94.3750)	lr 4.112268715800956e-05
+epoch [88/100][40/57]	time 0.093 (0.257)	data 0.019 (0.189)	eta 0:02:59	loss 0.5283 (0.5409)	xded_loss 0.0517 (0.0340)	acc 100.0000 (93.9844)	lr 4.112268715800956e-05
+epoch [88/100][50/57]	time 0.076 (0.259)	data 0.000 (0.190)	eta 0:02:59	loss 1.7873 (0.5489)	xded_loss 0.0362 (0.0335)	acc 56.2500 (93.7500)	lr 4.112268715800956e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,173
+* accuracy: 55.66%
+* error: 44.34%
+epoch [89/100][10/57]	time 0.424 (0.366)	data 0.385 (0.310)	eta 0:04:06	loss 0.4147 (0.5223)	xded_loss 0.0292 (0.0359)	acc 100.0000 (96.5625)	lr 3.511175705587434e-05
+epoch [89/100][20/57]	time 0.166 (0.282)	data 0.095 (0.224)	eta 0:03:06	loss 0.3015 (0.5192)	xded_loss 0.0218 (0.0367)	acc 100.0000 (96.0938)	lr 3.511175705587434e-05
+epoch [89/100][30/57]	time 0.309 (0.278)	data 0.270 (0.220)	eta 0:03:01	loss 0.3078 (0.5165)	xded_loss 0.0288 (0.0357)	acc 100.0000 (95.7292)	lr 3.511175705587434e-05
+epoch [89/100][40/57]	time 0.078 (0.264)	data 0.000 (0.202)	eta 0:02:49	loss 0.2793 (0.5086)	xded_loss 0.0239 (0.0345)	acc 100.0000 (95.3125)	lr 3.511175705587434e-05
+epoch [89/100][50/57]	time 0.454 (0.265)	data 0.410 (0.204)	eta 0:02:48	loss 0.3632 (0.4729)	xded_loss 0.0359 (0.0338)	acc 100.0000 (96.2500)	lr 3.511175705587434e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,186
+* accuracy: 55.99%
+* error: 44.01%
+epoch [90/100][10/57]	time 0.451 (0.351)	data 0.383 (0.283)	eta 0:03:36	loss 0.3015 (0.4562)	xded_loss 0.0263 (0.0366)	acc 100.0000 (96.2500)	lr 2.9559615522887284e-05
+epoch [90/100][20/57]	time 0.085 (0.274)	data 0.001 (0.207)	eta 0:02:46	loss 0.3114 (0.4558)	xded_loss 0.0287 (0.0364)	acc 100.0000 (96.5625)	lr 2.9559615522887284e-05
+epoch [90/100][30/57]	time 0.447 (0.269)	data 0.396 (0.204)	eta 0:02:40	loss 0.2774 (0.4635)	xded_loss 0.0333 (0.0343)	acc 100.0000 (96.3542)	lr 2.9559615522887284e-05
+epoch [90/100][40/57]	time 0.081 (0.253)	data 0.015 (0.189)	eta 0:02:28	loss 0.3395 (0.5366)	xded_loss 0.0357 (0.0350)	acc 100.0000 (94.6094)	lr 2.9559615522887284e-05
+epoch [90/100][50/57]	time 0.316 (0.254)	data 0.273 (0.191)	eta 0:02:26	loss 1.6915 (0.5473)	xded_loss 0.0394 (0.0344)	acc 68.7500 (94.6250)	lr 2.9559615522887284e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,395
+* accuracy: 61.35%
+* error: 38.65%
+epoch [91/100][10/57]	time 0.304 (0.353)	data 0.246 (0.287)	eta 0:03:17	loss 0.3773 (1.2585)	xded_loss 0.0284 (0.0437)	acc 100.0000 (75.0000)	lr 2.447174185242324e-05
+epoch [91/100][20/57]	time 0.120 (0.281)	data 0.000 (0.215)	eta 0:02:34	loss 0.2756 (0.8035)	xded_loss 0.0236 (0.0386)	acc 100.0000 (87.5000)	lr 2.447174185242324e-05
+epoch [91/100][30/57]	time 0.292 (0.273)	data 0.208 (0.208)	eta 0:02:27	loss 0.4675 (0.6470)	xded_loss 0.0438 (0.0373)	acc 100.0000 (91.6667)	lr 2.447174185242324e-05
+epoch [91/100][40/57]	time 0.067 (0.257)	data 0.003 (0.195)	eta 0:02:16	loss 0.3615 (0.6066)	xded_loss 0.0370 (0.0366)	acc 100.0000 (92.6562)	lr 2.447174185242324e-05
+epoch [91/100][50/57]	time 0.156 (0.255)	data 0.104 (0.193)	eta 0:02:12	loss 0.3396 (0.5502)	xded_loss 0.0271 (0.0354)	acc 100.0000 (94.1250)	lr 2.447174185242324e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,119
+* accuracy: 54.28%
+* error: 45.72%
+epoch [92/100][10/57]	time 0.168 (0.370)	data 0.102 (0.299)	eta 0:03:06	loss 0.3196 (0.7889)	xded_loss 0.0298 (0.0386)	acc 100.0000 (87.8125)	lr 1.9853157161528526e-05
+epoch [92/100][20/57]	time 0.066 (0.283)	data 0.000 (0.215)	eta 0:02:19	loss 0.4483 (0.5552)	xded_loss 0.0443 (0.0342)	acc 100.0000 (93.9062)	lr 1.9853157161528526e-05
+epoch [92/100][30/57]	time 0.184 (0.276)	data 0.122 (0.210)	eta 0:02:13	loss 1.8642 (0.6774)	xded_loss 0.0654 (0.0349)	acc 62.5000 (90.2083)	lr 1.9853157161528526e-05
+epoch [92/100][40/57]	time 0.071 (0.256)	data 0.010 (0.191)	eta 0:02:01	loss 0.2856 (0.6630)	xded_loss 0.0277 (0.0352)	acc 100.0000 (90.8594)	lr 1.9853157161528526e-05
+epoch [92/100][50/57]	time 0.105 (0.259)	data 0.068 (0.193)	eta 0:01:59	loss 0.3001 (0.5958)	xded_loss 0.0263 (0.0344)	acc 100.0000 (92.6875)	lr 1.9853157161528526e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,346
+* accuracy: 60.09%
+* error: 39.91%
+epoch [93/100][10/57]	time 0.177 (0.340)	data 0.106 (0.273)	eta 0:02:31	loss 0.4035 (0.7627)	xded_loss 0.0403 (0.0362)	acc 100.0000 (90.0000)	lr 1.570841943568452e-05
+epoch [93/100][20/57]	time 0.082 (0.284)	data 0.001 (0.221)	eta 0:02:03	loss 0.3408 (0.5993)	xded_loss 0.0331 (0.0333)	acc 100.0000 (93.2812)	lr 1.570841943568452e-05
+epoch [93/100][30/57]	time 0.142 (0.268)	data 0.079 (0.206)	eta 0:01:54	loss 1.6591 (0.6118)	xded_loss 0.0309 (0.0342)	acc 65.6250 (91.8750)	lr 1.570841943568452e-05
+epoch [93/100][40/57]	time 0.170 (0.255)	data 0.128 (0.195)	eta 0:01:46	loss 0.3884 (0.5705)	xded_loss 0.0332 (0.0337)	acc 100.0000 (93.1250)	lr 1.570841943568452e-05
+epoch [93/100][50/57]	time 0.181 (0.253)	data 0.135 (0.195)	eta 0:01:42	loss 0.3121 (0.5750)	xded_loss 0.0282 (0.0338)	acc 100.0000 (93.3750)	lr 1.570841943568452e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,208
+* accuracy: 56.56%
+* error: 43.44%
+epoch [94/100][10/57]	time 0.067 (0.366)	data 0.001 (0.300)	eta 0:02:22	loss 0.2779 (0.6064)	xded_loss 0.0225 (0.0330)	acc 100.0000 (93.4375)	lr 1.204161903062634e-05
+epoch [94/100][20/57]	time 0.065 (0.279)	data 0.000 (0.212)	eta 0:01:45	loss 1.8123 (0.5364)	xded_loss 0.0734 (0.0342)	acc 68.7500 (95.1562)	lr 1.204161903062634e-05
+epoch [94/100][30/57]	time 0.075 (0.273)	data 0.003 (0.207)	eta 0:01:40	loss 0.2681 (0.4605)	xded_loss 0.0218 (0.0339)	acc 100.0000 (96.7708)	lr 1.204161903062634e-05
+epoch [94/100][40/57]	time 0.086 (0.256)	data 0.000 (0.190)	eta 0:01:32	loss 0.3363 (0.5773)	xded_loss 0.0283 (0.0351)	acc 100.0000 (93.5156)	lr 1.204161903062634e-05
+epoch [94/100][50/57]	time 0.080 (0.258)	data 0.007 (0.192)	eta 0:01:30	loss 1.7902 (0.5820)	xded_loss 0.0756 (0.0359)	acc 62.5000 (93.3750)	lr 1.204161903062634e-05
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,208
+* accuracy: 56.56%
+* error: 43.44%
+epoch [95/100][10/57]	time 0.439 (0.367)	data 0.389 (0.302)	eta 0:02:01	loss 2.0359 (0.6518)	xded_loss 0.0372 (0.0358)	acc 43.7500 (90.3125)	lr 8.85637463565564e-06
+epoch [95/100][20/57]	time 0.081 (0.285)	data 0.002 (0.220)	eta 0:01:31	loss 0.3034 (0.5695)	xded_loss 0.0271 (0.0357)	acc 100.0000 (93.5938)	lr 8.85637463565564e-06
+epoch [95/100][30/57]	time 0.331 (0.277)	data 0.280 (0.214)	eta 0:01:26	loss 0.2560 (0.5303)	xded_loss 0.0228 (0.0344)	acc 100.0000 (94.6875)	lr 8.85637463565564e-06
+epoch [95/100][40/57]	time 0.076 (0.258)	data 0.000 (0.194)	eta 0:01:17	loss 1.8101 (0.5573)	xded_loss 0.0449 (0.0345)	acc 65.6250 (93.9062)	lr 8.85637463565564e-06
+epoch [95/100][50/57]	time 0.306 (0.260)	data 0.261 (0.195)	eta 0:01:15	loss 0.2368 (0.5678)	xded_loss 0.0246 (0.0343)	acc 100.0000 (94.1250)	lr 8.85637463565564e-06
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,363
+* accuracy: 60.53%
+* error: 39.47%
+epoch [96/100][10/57]	time 0.160 (0.334)	data 0.104 (0.266)	eta 0:01:31	loss 0.2925 (0.8617)	xded_loss 0.0304 (0.0380)	acc 100.0000 (86.2500)	lr 6.155829702431171e-06
+epoch [96/100][20/57]	time 0.148 (0.275)	data 0.113 (0.212)	eta 0:01:12	loss 0.3691 (0.8377)	xded_loss 0.0427 (0.0396)	acc 100.0000 (86.7188)	lr 6.155829702431171e-06
+epoch [96/100][30/57]	time 0.194 (0.266)	data 0.125 (0.206)	eta 0:01:07	loss 0.3618 (0.7178)	xded_loss 0.0301 (0.0373)	acc 100.0000 (89.7917)	lr 6.155829702431171e-06
+epoch [96/100][40/57]	time 0.159 (0.253)	data 0.114 (0.195)	eta 0:01:02	loss 0.3471 (0.7733)	xded_loss 0.0306 (0.0377)	acc 100.0000 (88.2031)	lr 6.155829702431171e-06
+epoch [96/100][50/57]	time 0.154 (0.254)	data 0.108 (0.196)	eta 0:00:59	loss 0.3858 (0.6897)	xded_loss 0.0364 (0.0372)	acc 100.0000 (90.5625)	lr 6.155829702431171e-06
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,410
+* accuracy: 61.73%
+* error: 38.27%
+epoch [97/100][10/57]	time 0.087 (0.350)	data 0.000 (0.280)	eta 0:01:16	loss 0.2689 (0.3107)	xded_loss 0.0193 (0.0296)	acc 100.0000 (100.0000)	lr 3.942649342761118e-06
+epoch [97/100][20/57]	time 0.070 (0.274)	data 0.000 (0.203)	eta 0:00:57	loss 0.3660 (0.4636)	xded_loss 0.0352 (0.0342)	acc 100.0000 (96.5625)	lr 3.942649342761118e-06
+epoch [97/100][30/57]	time 0.140 (0.272)	data 0.003 (0.202)	eta 0:00:53	loss 0.2717 (0.4713)	xded_loss 0.0335 (0.0334)	acc 100.0000 (95.8333)	lr 3.942649342761118e-06
+epoch [97/100][40/57]	time 0.069 (0.252)	data 0.000 (0.185)	eta 0:00:47	loss 0.3063 (0.4391)	xded_loss 0.0238 (0.0332)	acc 100.0000 (96.8750)	lr 3.942649342761118e-06
+epoch [97/100][50/57]	time 0.126 (0.254)	data 0.000 (0.188)	eta 0:00:45	loss 0.3881 (0.4169)	xded_loss 0.0332 (0.0326)	acc 100.0000 (97.5000)	lr 3.942649342761118e-06
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,210
+* accuracy: 56.61%
+* error: 43.39%
+epoch [98/100][10/57]	time 0.085 (0.360)	data 0.005 (0.295)	eta 0:00:58	loss 0.1948 (1.1082)	xded_loss 0.0188 (0.0385)	acc 100.0000 (76.2500)	lr 2.2190176984600023e-06
+epoch [98/100][20/57]	time 0.064 (0.279)	data 0.000 (0.217)	eta 0:00:42	loss 0.2822 (0.8623)	xded_loss 0.0230 (0.0360)	acc 100.0000 (85.4688)	lr 2.2190176984600023e-06
+epoch [98/100][30/57]	time 0.313 (0.271)	data 0.257 (0.211)	eta 0:00:38	loss 0.3262 (0.7755)	xded_loss 0.0263 (0.0356)	acc 100.0000 (88.2292)	lr 2.2190176984600023e-06
+epoch [98/100][40/57]	time 0.082 (0.256)	data 0.000 (0.197)	eta 0:00:33	loss 0.3087 (0.7677)	xded_loss 0.0353 (0.0369)	acc 100.0000 (88.8281)	lr 2.2190176984600023e-06
+epoch [98/100][50/57]	time 0.317 (0.257)	data 0.257 (0.197)	eta 0:00:31	loss 2.1303 (0.7448)	xded_loss 0.0535 (0.0368)	acc 31.2500 (88.8125)	lr 2.2190176984600023e-06
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,091
+* accuracy: 53.56%
+* error: 46.44%
+epoch [99/100][10/57]	time 0.304 (0.354)	data 0.257 (0.290)	eta 0:00:36	loss 0.2959 (0.5819)	xded_loss 0.0281 (0.0350)	acc 100.0000 (95.0000)	lr 9.866357858642206e-07
+epoch [99/100][20/57]	time 0.085 (0.277)	data 0.044 (0.215)	eta 0:00:26	loss 0.3237 (0.5476)	xded_loss 0.0364 (0.0352)	acc 100.0000 (94.3750)	lr 9.866357858642206e-07
+epoch [99/100][30/57]	time 0.288 (0.267)	data 0.240 (0.207)	eta 0:00:22	loss 0.3181 (0.5265)	xded_loss 0.0285 (0.0356)	acc 100.0000 (95.1042)	lr 9.866357858642206e-07
+epoch [99/100][40/57]	time 0.116 (0.251)	data 0.010 (0.191)	eta 0:00:18	loss 0.2171 (0.5138)	xded_loss 0.0253 (0.0352)	acc 100.0000 (95.3906)	lr 9.866357858642206e-07
+epoch [99/100][50/57]	time 0.436 (0.256)	data 0.378 (0.196)	eta 0:00:16	loss 0.2988 (0.5025)	xded_loss 0.0343 (0.0350)	acc 100.0000 (95.8125)	lr 9.866357858642206e-07
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,304
+* accuracy: 59.02%
+* error: 40.98%
+epoch [100/100][10/57]	time 0.165 (0.370)	data 0.108 (0.308)	eta 0:00:17	loss 0.2769 (0.3098)	xded_loss 0.0296 (0.0308)	acc 100.0000 (100.0000)	lr 2.467198171342e-07
+epoch [100/100][20/57]	time 0.111 (0.287)	data 0.000 (0.221)	eta 0:00:10	loss 0.3220 (0.4641)	xded_loss 0.0290 (0.0322)	acc 100.0000 (97.8125)	lr 2.467198171342e-07
+epoch [100/100][30/57]	time 0.118 (0.278)	data 0.078 (0.214)	eta 0:00:07	loss 0.3101 (0.5703)	xded_loss 0.0397 (0.0333)	acc 100.0000 (94.6875)	lr 2.467198171342e-07
+epoch [100/100][40/57]	time 0.067 (0.259)	data 0.000 (0.195)	eta 0:00:04	loss 0.4113 (0.5133)	xded_loss 0.0438 (0.0337)	acc 100.0000 (96.0156)	lr 2.467198171342e-07
+epoch [100/100][50/57]	time 0.325 (0.265)	data 0.283 (0.201)	eta 0:00:01	loss 0.3175 (0.5125)	xded_loss 0.0349 (0.0341)	acc 100.0000 (96.0000)	lr 2.467198171342e-07
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,298
+* accuracy: 58.86%
+* error: 41.14%
+Finished training
+Do evaluation on test set
+=> result
+* total: 3,904
+* correct: 2,298
+* accuracy: 58.86%
+* error: 41.14%
+Elapsed: 1:05:13
